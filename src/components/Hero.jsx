@@ -1,14 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
 
 const Hero = () => {
-    const { name, role, bio, profilePicture } = portfolioData.personalInfo;
+    const { name, role, bio, profilePicture, socials, email } = portfolioData.personalInfo;
 
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden text-center px-4 pt-20">
+        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden text-center px-4 pt-0 pb-20">
             {/* Background Wave Animation */}
             <div className="absolute inset-0 z-0 opacity-30">
                 <motion.div
@@ -85,27 +85,55 @@ const Hero = () => {
                     {bio}
                 </motion.p>
 
+                {/* Social Icons */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                    className="flex items-center gap-6"
                 >
                     <a
-                        href="#projects"
-                        className="inline-block px-8 py-3 rounded-xl bg-ocean-accent/20 hover:bg-ocean-accent/30 text-ocean-dark font-medium backdrop-blur-sm border border-ocean-accent/30 transition-all duration-300 shadow-lg hover:shadow-ocean-accent/20"
+                        href={socials.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 bg-white/80 backdrop-blur-sm rounded-full text-ocean-dark hover:text-ocean-accent hover:scale-110 hover:shadow-lg transition-all duration-300 border border-ocean-dark/10"
+                        title="LinkedIn"
                     >
-                        View My Work
+                        <Linkedin size={28} />
+                    </a>
+                    <a
+                        href={socials.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 bg-white/80 backdrop-blur-sm rounded-full text-ocean-dark hover:text-ocean-accent hover:scale-110 hover:shadow-lg transition-all duration-300 border border-ocean-dark/10"
+                        title="GitHub"
+                    >
+                        <Github size={28} />
+                    </a>
+                    <a
+                        href={`mailto:${email}`}
+                        className="p-3 bg-white/80 backdrop-blur-sm rounded-full text-ocean-dark hover:text-ocean-accent hover:scale-110 hover:shadow-lg transition-all duration-300 border border-ocean-dark/10"
+                        title="Email"
+                    >
+                        <Mail size={28} />
                     </a>
                 </motion.div>
             </div>
 
             {/* Scroll Indicator */}
             <motion.div
-                className="absolute bottom-10 z-10 text-ocean-dark/50"
+                className="absolute bottom-10 z-10"
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
             >
-                <ArrowDown size={32} />
+                <a
+                    href="#projects"
+                    aria-label="Scroll to projects"
+                    className="flex flex-col items-center gap-2 text-ocean-dark/50 hover:text-ocean-accent transition-colors cursor-pointer group"
+                >
+                    <span className="text-sm font-medium tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Work</span>
+                    <ArrowDown size={32} className="group-hover:scale-110 transition-transform duration-300" />
+                </a>
             </motion.div>
         </section>
     );

@@ -19,14 +19,24 @@
       "role": "Senior Data Engineer",
       "company": "Tech Corp",
       "duration": "2022 - Present",
-      "description": "Led the migration of on-premise data warehouse to AWS Redshift. Optimized ETL pipelines reducing processing time by 40%."
+      "description": [
+        "Led the migration of on-premise data warehouse to AWS Redshift, handling over 50TB of historical data.",
+        "Optimized ETL pipelines using Spark and Airflow, reducing daily processing time by 40% and improving data availability SLA to 99.9%.",
+        "Designed and implemented a real-time data ingestion framework using Kafka and Flink for fraud detection.",
+        "Mentored junior engineers and established best practices for code review and CI/CD pipelines."
+      ]
     },
     {
       "id": 2,
       "role": "Data Engineer",
       "company": "Data Solutions Inc.",
       "duration": "2020 - 2022",
-      "description": "Developed and maintained data pipelines using Python and SQL. Collaborated with data scientists to deploy machine learning models."
+      "description": [
+        "Developed and maintained scalable data pipelines using Python and SQL to support marketing analytics.",
+        "Collaborated with data scientists to deploy machine learning models into production using Docker and Kubernetes.",
+        "Implemented data quality checks and automated alerting systems to ensure data integrity.",
+        "Reduced cloud infrastructure costs by 20% through optimization of compute resources and storage policies."
+      ]
     }
   ],
   "education": [
@@ -43,22 +53,68 @@
       "year": "2018"
     }
   ],
+  "certifications": [
+    {
+      "id": 1,
+      "title": "TOEFL iBT",
+      "issuer": "ETS",
+      "date": "2023",
+      "score": "110/120"
+    },
+    {
+      "id": 2,
+      "title": "AWS Certified Solutions Architect – Associate",
+      "issuer": "Amazon Web Services",
+      "date": "2022",
+      "score": ""
+    }
+  ],
+  "publications": [
+    {
+      "id": 1,
+      "title": "Optimizing Big Data Processing with Spark and Kubernetes",
+      "conference": "International Conference on Data Engineering (ICDE)",
+      "date": "2023",
+      "link": "#",
+      "description": "Proposed a novel scheduling algorithm for Spark jobs on Kubernetes clusters, improving resource utilization by 25%."
+    }
+  ],
   "techStack": [
     {
       "category": "Languages",
-      "skills": ["Python", "SQL", "Java", "Scala"]
+      "skills": [
+        "Python",
+        "SQL",
+        "Java",
+        "Scala"
+      ]
     },
     {
       "category": "Big Data",
-      "skills": ["Spark", "Hadoop", "Kafka", "Airflow"]
+      "skills": [
+        "Spark",
+        "Hadoop",
+        "Kafka",
+        "Airflow"
+      ]
     },
     {
       "category": "Cloud",
-      "skills": ["AWS", "GCP", "Azure", "Snowflake"]
+      "skills": [
+        "AWS",
+        "GCP",
+        "Azure",
+        "Snowflake"
+      ]
     },
     {
       "category": "Databases",
-      "skills": ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"]
+      "skills": [
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Elasticsearch"
+      ]
     }
   ],
   "projects": [
@@ -66,21 +122,36 @@
       "id": 1,
       "title": "Real-time Analytics Dashboard",
       "description": "A real-time dashboard for monitoring system metrics using Kafka, Spark Streaming, and React.",
-      "tech": ["Kafka", "Spark", "React", "Node.js"],
+      "tech": [
+        "Kafka",
+        "Spark",
+        "React",
+        "Node.js"
+      ],
       "link": "#"
     },
     {
       "id": 2,
       "title": "Data Warehouse Migration",
       "description": "Migrated 50TB of data from Oracle to Snowflake with zero downtime.",
-      "tech": ["Snowflake", "Python", "Airflow", "SQL"],
+      "tech": [
+        "Snowflake",
+        "Python",
+        "Airflow",
+        "SQL"
+      ],
       "link": "#"
     },
     {
       "id": 3,
       "title": "ETL Pipeline Automation",
       "description": "Automated daily ETL jobs using Airflow, reducing manual intervention by 95%.",
-      "tech": ["Airflow", "Python", "Docker", "AWS"],
+      "tech": [
+        "Airflow",
+        "Python",
+        "Docker",
+        "AWS"
+      ],
       "link": "#"
     }
   ]

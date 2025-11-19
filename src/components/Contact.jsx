@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
 
 const Contact = () => {
@@ -30,13 +30,13 @@ const Contact = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="flex justify-center">
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="space-y-8"
+                        className="space-y-8 bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm min-w-[300px] md:min-w-[400px]"
                     >
                         <div className="flex items-start gap-4">
                             <div className="p-3 bg-white/10 rounded-lg">
@@ -68,43 +68,6 @@ const Contact = () => {
                             </div>
                         </div>
                     </motion.div>
-
-                    <motion.form
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        className="space-y-6"
-                        onSubmit={(e) => e.preventDefault()}
-                    >
-                        <div>
-                            <input
-                                type="text"
-                                placeholder="Your Name"
-                                className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-ocean-accent/50 focus:bg-white/10 transition-all placeholder:text-white/30"
-                            />
-                        </div>
-                        <div>
-                            <input
-                                type="email"
-                                placeholder="Your Email"
-                                className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-ocean-accent/50 focus:bg-white/10 transition-all placeholder:text-white/30"
-                            />
-                        </div>
-                        <div>
-                            <textarea
-                                rows="4"
-                                placeholder="Your Message"
-                                className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-ocean-accent/50 focus:bg-white/10 transition-all placeholder:text-white/30 resize-none"
-                            ></textarea>
-                        </div>
-                        <button
-                            type="submit"
-                            className="w-full py-4 bg-ocean-accent text-ocean-dark font-bold rounded-xl hover:bg-white transition-colors duration-300 flex items-center justify-center gap-2"
-                        >
-                            Send Message <Send size={18} />
-                        </button>
-                    </motion.form>
                 </div>
             </div>
         </section>
