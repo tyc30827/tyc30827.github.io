@@ -1,0 +1,87 @@
+{
+  "personalInfo": {
+    "name": "Willie Liu",
+    "role": "Data Engineer",
+    "bio": "Building scalable pipelines and turning raw data into actionable insights. Specializing in ETL, Data Warehousing, and Cloud Architecture.",
+    "profilePicture": "https://api.dicebear.com/9.x/micah/svg?seed=Willie",
+    "email": "willie.liu@example.com",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/willieliu",
+      "github": "https://github.com/willieliu"
+    }
+  },
+  "about": {
+    "description": "I am a passionate Data Engineer with a strong background in building data infrastructures. I love solving complex data problems and optimizing performance."
+  },
+  "experience": [
+    {
+      "id": 1,
+      "role": "Senior Data Engineer",
+      "company": "Tech Corp",
+      "duration": "2022 - Present",
+      "description": "Led the migration of on-premise data warehouse to AWS Redshift. Optimized ETL pipelines reducing processing time by 40%."
+    },
+    {
+      "id": 2,
+      "role": "Data Engineer",
+      "company": "Data Solutions Inc.",
+      "duration": "2020 - 2022",
+      "description": "Developed and maintained data pipelines using Python and SQL. Collaborated with data scientists to deploy machine learning models."
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "degree": "Master of Science in Data Science",
+      "school": "University of Technology",
+      "year": "2020"
+    },
+    {
+      "id": 2,
+      "degree": "Bachelor of Science in Computer Science",
+      "school": "State University",
+      "year": "2018"
+    }
+  ],
+  "techStack": [
+    {
+      "category": "Languages",
+      "skills": ["Python", "SQL", "Java", "Scala"]
+    },
+    {
+      "category": "Big Data",
+      "skills": ["Spark", "Hadoop", "Kafka", "Airflow"]
+    },
+    {
+      "category": "Cloud",
+      "skills": ["AWS", "GCP", "Azure", "Snowflake"]
+    },
+    {
+      "category": "Databases",
+      "skills": ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Real-time Analytics Dashboard",
+      "description": "A real-time dashboard for monitoring system metrics using Kafka, Spark Streaming, and React.",
+      "tech": ["Kafka", "Spark", "React", "Node.js"],
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "title": "Data Warehouse Migration",
+      "description": "Migrated 50TB of data from Oracle to Snowflake with zero downtime.",
+      "tech": ["Snowflake", "Python", "Airflow", "SQL"],
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "title": "ETL Pipeline Automation",
+      "description": "Automated daily ETL jobs using Airflow, reducing manual intervention by 95%.",
+      "tech": ["Airflow", "Python", "Docker", "AWS"],
+      "link": "#"
+    }
+  ]
+}
