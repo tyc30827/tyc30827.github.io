@@ -1,11 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Linkedin } from 'lucide-react'; // Changed Phone to Linkedin
 import portfolioData from '../data/portfolio.json';
 
 const Contact = () => {
-    const { email } = portfolioData.personalInfo;
+    const { email, socials } = portfolioData.personalInfo; // Added socials
 
     return (
         <section id="contact" className="py-20 px-4 bg-ocean-dark text-white relative overflow-hidden">
@@ -26,7 +26,7 @@ const Contact = () => {
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
                     <div className="w-20 h-1 bg-ocean-accent mx-auto rounded-full"></div>
                     <p className="mt-6 text-ocean-light/80 text-lg max-w-2xl mx-auto">
-                        Interested in working together? Feel free to reach out for collaborations or just a friendly hello.
+                        Feel free to reach out for collaborations or just a friendly hello!
                     </p>
                 </motion.div>
 
@@ -55,16 +55,19 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h3 className="font-semibold text-lg mb-1">Location</h3>
-                                <p className="text-ocean-light/70">San Francisco, CA</p>
+                                <p className="text-ocean-light/70">Taipei, Taiwan</p>
                             </div>
                         </div>
+                        {/* Replaced Phone with LinkedIn */}
                         <div className="flex items-start gap-4">
                             <div className="p-3 bg-white/10 rounded-lg">
-                                <Phone className="text-ocean-accent" size={24} />
+                                <Linkedin className="text-ocean-accent" size={24} />
                             </div>
                             <div>
-                                <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                                <p className="text-ocean-light/70">+1 (555) 123-4567</p>
+                                <h3 className="font-semibold text-lg mb-1">LinkedIn</h3>
+                                <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-ocean-light/70 hover:text-white transition-colors">
+                                    {socials.linkedin.replace('https://www.linkedin.com/in/willie-huang-ba79a9199/', 'Willie Huang')}
+                                </a>
                             </div>
                         </div>
                     </motion.div>
