@@ -2,7 +2,6 @@
   "personalInfo": {
     "name": "Willie Huang",
     "role": "Data / MLOps Engineer",
-    "bio": "Extremely passionate and curious about data science, I embrace new technologies and enjoy using various data science tools to extract insights from data. I am eager to continuously learn and build a solid foundation in my career.",
     "profilePicture": "/images/willie.jpg",
     "email": "tyc30827@gmail.com",
     "socials": {
@@ -11,7 +10,7 @@
     }
   },
   "about": {
-    "description": "A passionate Data Engineer with a strong background in building data infrastructures. I love solving complex data problems and optimizing performance. Extremely passionate and curious about data science, trying to dig into insights from data itself through various data science tools, embracing new technologies, and eager to keep learning and build a solid foundation in my career."
+    "description": "A highly passionate Data Engineer with 5.5 years of hands-on experience in building robust, scalable data infrastructures. I excel at optimizing data pipelines and transforming complex, raw data into actionable insights. Driven by curiosity about data science, I continuously embrace new technologies to solve real-world data challenges and deliver high-impact business solutions."
   },
   "experience": [
     {
@@ -20,11 +19,12 @@
       "company": "XRSpace Co., Ltd.",
       "duration": "2024/8 - Present",
       "description": [
-        "Independently designed and developed an AI-labeling system for a social media platform, integrating LLM (AWS Bedrock, PydanticAI), Flask, Kafka, and Dagster to create a complete data processing pipeline.",
-        "Designed and implemented a Multi-modal RAG system.",
-        "Designed and implemented a Structured data RAG system.",
-        "Responsible for data platform architecture optimization, system design, and operation of basic infrastructure such as Airbyte (integrated with Terraform for management), dbt, Dagster, and BigQuery, promoting the automation and standardization of data processing flows.",
-        "Led 4 junior engineers to familiarize them with basic concepts of data engineering, team technical culture, and system design, improving the overall technical level of the team."
+          "Host all of the development about the AI-labeling system for a social media platform, integrating LLM (AWS Bedrock, PydanticAI), Flask, Kafka, and Dagster to establish a complete data processing pipeline.",
+          "Drive data platform architecture optimization, system design, and operation of core infrastructure (Airbyte managed via Terraform, dbt, Dagster, BigQuery), achieving full automation and standardization of data processing flows.",
+          "Optimize complex SQL queries and BigQuery data structure (clustering/partitioning), successfully reducing BigQuery query costs and computational usage by 90%.",
+          "Led and mentored 3 junior engineers on fundamental data engineering concepts, system design, and technical culture, significantly enhancing the team's overall technical proficiency and delivery capabilities.",
+          "Designed and implemented a Proof-of-Concept (PoC) for a Multi-modal RAG system via LlamaIndex.",
+          "Successfully integrated a Structured Data RAG system into the main product, improving csv data retrieval accuracy for core features."
       ]
     },
     {
@@ -44,12 +44,12 @@
       "company": "CyberLink Corp.",
       "duration": "2020/6 - 2023/10",
       "description": [
-        "Data pipeline, processing tens of millions of records/GB-level data through Airflow for ETL/ELT.",
+        "Data pipeline, processing hundreds of millions of records/GB-level data through Airflow for ETL/ELT.",
         "Data warehouse, performing near real-time analysis on big data.",
         "Data visualization using tools like Superset and Tableau.",
-        "Information retrieval from templates.",
-        "Personalized recommendation system (Data product).",
-        "GNN-based user preference system."
+        "Information retrieval and content labeling from templates.",
+        "End-to-end Personalized recommendation system in our main product: Promeo.",
+        "GNN-based user preference system PoC."
       ]
     }
   ],
@@ -82,25 +82,25 @@
       "title": "Attentive gated graph sequence neural network-based time-series information fusion for financial trading",
       "conference": "Information Fusion",
       "date": "2022",
-      "link": "https://doi.org/10.1016/j.inffus.2022.01.008",
+      "link": "https://www.sciencedirect.com/science/article/abs/pii/S1566253522001750",
       "description": "First author of paper in top-tier computer science journal - Information Fusion."
     }
   ],
   "techStack": [
     {
-        "category": "Languages",
-        "skills": ["Python", "SQL", "Java", "Scala", "C++/C"]
+        "category": "Programming Languages",
+        "skills": ["Python", "SQL", "Java", "C++/C"]
     },
     {
-        "category": "Databases",
-        "skills": ["PostgreSQL", "MySQL", "SQL Server", "MongoDB", "BigQuery", "DuckDB", "Athena", "S3/MinIO"]
+        "category": "Databases / Data Warehousing",
+        "skills": ["PostgreSQL", "MongoDB", "BigQuery", "AWS Athena", "AWS S3/MinIO", "DuckDB", "MySQL", "SQL Server"]
     },
     {
         "category": "Data Engineering",
-        "skills": ["Airflow", "Dagster", "Airbyte", "dbt (SQL)", "Apache Kafka"]
+        "skills": ["Airflow", "Dagster", "Airbyte", "dbt (Data Build Tool)", "AWS Athena", "Apache Kafka"]
     },
     {
-        "category": "Data Analytics",
+        "category": "Data Visualization & BI",
         "skills": ["GA4", "Looker Studio", "Superset", "Tableau"]
     },
     {
@@ -108,12 +108,12 @@
         "skills": ["Flask", "Pydantic"]
     },
     {
-        "category": "IaC",
-        "skills": ["Terraform", "Docker", "Git", "GitOps/ArgoCD", "CICD"]
+        "category": "Infrastructure",
+        "skills": ["Terraform", "Docker", "Git", "GitOps/ArgoCD"]
     },
     {
         "category": "AWS Services",
-        "skills": ["Personalize", "Rekognition", "Neptune", "EC2", "Lambda", "Kinesis", "Bedrock"]
+        "skills": ["Bedrock", "Personalize", "Rekognition", "Neptune", "EC2", "Lambda", "Kinesis"]
     },
     {
         "category": "GenAI / RAG / MLOps",
@@ -121,7 +121,7 @@
     },
     {
         "category": "Machine Learning",
-        "skills": ["GNN", "Recommendation system", "Financial Time-Series", "PyTorch", "Keras", "SageMaker", "Huggingface"]
+        "skills": ["GNN", "Recommendation system", "Financial Time-Series", "PyTorch", "Keras", "AWS SageMaker"]
     },
     {
         "category": "Package dependencies management",
@@ -132,36 +132,43 @@
     {
         "id": 1,
         "title": "AI-labeling system for social media platform",
-        "description": "Independently designed and developed an AI-labeling system for a social media platform, integrating LLM (AWS Bedrock, PydanticAI), Flask, Kafka, and Dagster to create a complete data processing pipeline.",
-        "tech": ["LLM", "AWS Bedrock", "PydanticAI", "Flask", "Kafka", "Dagster"],
+        "description": "Independently designed and developed an end-to-end system for a social media platform, integrating LLM (AWS Bedrock, PydanticAI), Flask, Kafka, and Dagster to create a complete data processing pipeline.",
+        "tech": ["LLM", "AWS Bedrock", "PydanticAI", "Flask", "Apache Kafka", "Dagster"],
         "link": ""
     },
     {
         "id": 2,
-        "title": "Multi-modal RAG system",
-        "description": "Researched and applied the latest multi-modal RAG papers, using Llamaindex with Huggingface or large-scale API implementation systems, and developed a baseline multi-modal RAG system based on the Gemini 2.5 series of large models.",
-        "tech": ["Llamaindex", "Huggingface", "Gemini 2.5"],
+        "title": "Scalable Structured Data RAG Workflow for User-Uploaded Assets",
+        "description": "Engineered a scalable data ingestion workflow (embedding, chunking, and indexing) using dramatiq for asynchronous processing of user-uploaded CSV files. This process leverages AWS Bedrock Knowledge Bases to enable complex, high-accuracy Q&A capabilities over structured data, enhancing product functionality.",
+        "tech": ["AWS Bedrock Knowledge Bases", "PostgreSQL", "dramatiq", "Python"],
         "link": ""
     },
     {
         "id": 3,
-        "title": "Structured data RAG system",
-        "description": "Using DuckDB with Gemini-2.5-flash-lite, designed a system architecture with highly competitive retrieval time and cost, which can be used immediately after users upload files.",
-        "tech": ["DuckDB", "Gemini-2.5-flash-lite"],
+        "title": "Multi-modal RAG system PoC",
+        "description": "Researched and applied the latest multi-modal RAG papers, using Llamaindex with Huggingface or large-scale API implementation systems, and developed a baseline multi-modal RAG system based on the Gemini 2.5 series of large models.",
+        "tech": ["Llamaindex", "MLflow", "Huggingface", "Gemini 2.5"],
         "link": ""
     },
     {
         "id": 4,
-        "title": "Text mining for customer feedback data",
-        "description": "A NLP model (LDA) was built to model topics, trying to find potential topics or keywords from the original user feedback data, and the prediction results were presented on a dashboard in Tableau.",
-        "tech": ["NLP", "LDA", "Tableau"],
+        "title": "Adavanced Structured data RAG system PoC",
+        "description": "Using DuckDB with Gemini-2.5-flash-lite, designed a system architecture with highly competitive retrieval time and cost, which can be used immediately after users upload files.",
+        "tech": ["PydanticAI", "DuckDB", "Gemini-2.5-flash-lite", "MLflow"],
         "link": ""
     },
     {
         "id": 5,
-        "title": "Personalized recommendation system (Data product)",
+        "title": "Text mining for customer feedback data",
+        "description": "A NLP model (LDA) was built to model topics, trying to find potential topics or keywords from the original user feedback data, and the prediction results were presented on a dashboard in Tableau.",
+        "tech": ["Airflow", "NLP", "LDA", "Tableau"],
+        "link": ""
+    },
+    {
+        "id": 6,
+        "title": "Personalized recommendation system",
         "description": "Developed the 'For You' feature of the company's product 'Promeo' from scratch, training a deep learning-based recommendation system through product interaction data to provide personalized recommendations for subscribers.",
-        "tech": ["Deep Learning", "Recommendation System"],
+        "tech": ["AWS Personalize", "Airflow", "MLflow"],
         "link": ""
     }
   ]
