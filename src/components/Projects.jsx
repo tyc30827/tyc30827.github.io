@@ -47,18 +47,6 @@ const Projects = () => {
                                     ))}
                                 </div>
                                 <div className="flex gap-4">
-                                    <a
-                                        href={project.link}
-                                        className="flex items-center gap-2 text-sm font-medium text-ocean-dark hover:text-ocean-accent transition-colors"
-                                    >
-                                        <ExternalLink size={16} /> Live Demo
-                                    </a>
-                                    <a
-                                        href="#"
-                                        className="flex items-center gap-2 text-sm font-medium text-ocean-dark hover:text-ocean-accent transition-colors"
-                                    >
-                                        <Github size={16} /> Code
-                                    </a>
                                 </div>
                             </div>
                         </motion.div>

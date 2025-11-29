@@ -64,14 +64,14 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-ocean-accent font-semibold tracking-wider uppercase text-sm md:text-base mb-4"
                 >
-                    Hello, I'm a
+                    Hello, I'm Willie Huang
                 </motion.h2>
 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-5xl md:text-7xl font-bold text-ocean-dark tracking-tight mb-6"
+                    className="text-2xl md:text-4xl font-bold text-ocean-dark tracking-tight mb-6"
                 >
                     {role}
                 </motion.h1>

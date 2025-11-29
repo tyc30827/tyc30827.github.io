@@ -1,158 +1,168 @@
 {
   "personalInfo": {
-    "name": "Willie Liu",
-    "role": "Data Engineer",
-    "bio": "Building scalable pipelines and turning raw data into actionable insights. Specializing in ETL, Data Warehousing, and Cloud Architecture.",
-    "profilePicture": "https://api.dicebear.com/9.x/micah/svg?seed=Willie",
-    "email": "willie.liu@example.com",
+    "name": "Willie Huang",
+    "role": "Data / MLOps Engineer",
+    "bio": "Extremely passionate and curious about data science, I embrace new technologies and enjoy using various data science tools to extract insights from data. I am eager to continuously learn and build a solid foundation in my career.",
+    "profilePicture": "/images/willie.jpg",
+    "email": "tyc30827@gmail.com",
     "socials": {
-      "linkedin": "https://linkedin.com/in/willieliu",
-      "github": "https://github.com/willieliu"
+      "linkedin": "https://www.linkedin.com/in/willie-huang-ba79a9199/",
+      "github": "https://github.com/tyc30827"
     }
   },
   "about": {
-    "description": "I am a passionate Data Engineer with a strong background in building data infrastructures. I love solving complex data problems and optimizing performance."
+    "description": "A passionate Data Engineer with a strong background in building data infrastructures. I love solving complex data problems and optimizing performance. Extremely passionate and curious about data science, trying to dig into insights from data itself through various data science tools, embracing new technologies, and eager to keep learning and build a solid foundation in my career."
   },
   "experience": [
     {
       "id": 1,
-      "role": "Senior Data Engineer",
-      "company": "Tech Corp",
-      "duration": "2022 - Present",
+      "role": "Senior Data Engineer / MLOps Engineer",
+      "company": "XRSpace Co., Ltd.",
+      "duration": "2024/8 - Present",
       "description": [
-        "Led the migration of on-premise data warehouse to AWS Redshift, handling over 50TB of historical data.",
-        "Optimized ETL pipelines using Spark and Airflow, reducing daily processing time by 40% and improving data availability SLA to 99.9%.",
-        "Designed and implemented a real-time data ingestion framework using Kafka and Flink for fraud detection.",
-        "Mentored junior engineers and established best practices for code review and CI/CD pipelines."
+        "Independently designed and developed an AI-labeling system for a social media platform, integrating LLM (AWS Bedrock, PydanticAI), Flask, Kafka, and Dagster to create a complete data processing pipeline.",
+        "Designed and implemented a Multi-modal RAG system.",
+        "Designed and implemented a Structured data RAG system.",
+        "Responsible for data platform architecture optimization, system design, and operation of basic infrastructure such as Airbyte (integrated with Terraform for management), dbt, Dagster, and BigQuery, promoting the automation and standardization of data processing flows.",
+        "Led 4 junior engineers to familiarize them with basic concepts of data engineering, team technical culture, and system design, improving the overall technical level of the team."
       ]
     },
     {
       "id": 2,
-      "role": "Data Engineer",
-      "company": "Data Solutions Inc.",
-      "duration": "2020 - 2022",
+      "role": "Senior data engineer",
+      "company": "CyberLink Corp.",
+      "duration": "2023/10 - 2024/8",
       "description": [
-        "Developed and maintained scalable data pipelines using Python and SQL to support marketing analytics.",
-        "Collaborated with data scientists to deploy machine learning models into production using Docker and Kubernetes.",
-        "Implemented data quality checks and automated alerting systems to ensure data integrity.",
-        "Reduced cloud infrastructure costs by 20% through optimization of compute resources and storage policies."
+        "Text mining for customer feedback data",
+        "Data pipeline used for collecting total mobile install data from various datasource",
+        "Data migration of existed projects handled by our data team"
+      ]
+    },
+    {
+      "id": 3,
+      "role": "Data Scientist and Engineer",
+      "company": "CyberLink Corp.",
+      "duration": "2020/6 - 2023/10",
+      "description": [
+        "Data pipeline, processing tens of millions of records/GB-level data through Airflow for ETL/ELT.",
+        "Data warehouse, performing near real-time analysis on big data.",
+        "Data visualization using tools like Superset and Tableau.",
+        "Information retrieval from templates.",
+        "Personalized recommendation system (Data product).",
+        "GNN-based user preference system."
       ]
     }
   ],
   "education": [
     {
       "id": 1,
-      "degree": "Master of Science in Data Science",
-      "school": "University of Technology",
-      "year": "2020"
+      "degree": "Master of Science",
+      "school": "National Chiao Tung University, Institute of Information Management",
+      "year": "2017/9 - 2019/8"
     },
     {
       "id": 2,
-      "degree": "Bachelor of Science in Computer Science",
-      "school": "State University",
-      "year": "2018"
+      "degree": "Bachelor of Science",
+      "school": "National Cheng Kung University, Department of Industrial and Information Management",
+      "year": "2013/9 - 2017/6"
     }
   ],
   "certifications": [
     {
       "id": 1,
-      "title": "TOEFL iBT",
+      "title": "TOEIC",
       "issuer": "ETS",
-      "date": "2023",
-      "score": "110/120"
-    },
-    {
-      "id": 2,
-      "title": "AWS Certified Solutions Architect – Associate",
-      "issuer": "Amazon Web Services",
-      "date": "2022",
-      "score": ""
+      "date": "",
+      "score": "845"
     }
   ],
   "publications": [
     {
       "id": 1,
-      "title": "Optimizing Big Data Processing with Spark and Kubernetes",
-      "conference": "International Conference on Data Engineering (ICDE)",
-      "date": "2023",
-      "link": "#",
-      "description": "Proposed a novel scheduling algorithm for Spark jobs on Kubernetes clusters, improving resource utilization by 25%."
+      "title": "Attentive gated graph sequence neural network-based time-series information fusion for financial trading",
+      "conference": "Information Fusion",
+      "date": "2022",
+      "link": "https://doi.org/10.1016/j.inffus.2022.01.008",
+      "description": "First author of paper in top-tier computer science journal - Information Fusion."
     }
   ],
   "techStack": [
     {
-      "category": "Languages",
-      "skills": [
-        "Python",
-        "SQL",
-        "Java",
-        "Scala"
-      ]
+        "category": "Languages",
+        "skills": ["Python", "SQL", "Java", "Scala", "C++/C"]
     },
     {
-      "category": "Big Data",
-      "skills": [
-        "Spark",
-        "Hadoop",
-        "Kafka",
-        "Airflow"
-      ]
+        "category": "Databases",
+        "skills": ["PostgreSQL", "MySQL", "SQL Server", "MongoDB", "BigQuery", "DuckDB", "Athena", "S3/MinIO"]
     },
     {
-      "category": "Cloud",
-      "skills": [
-        "AWS",
-        "GCP",
-        "Azure",
-        "Snowflake"
-      ]
+        "category": "Data Engineering",
+        "skills": ["Airflow", "Dagster", "Airbyte", "dbt (SQL)", "Apache Kafka"]
     },
     {
-      "category": "Databases",
-      "skills": [
-        "PostgreSQL",
-        "MongoDB",
-        "Redis",
-        "Elasticsearch"
-      ]
+        "category": "Data Analytics",
+        "skills": ["GA4", "Looker Studio", "Superset", "Tableau"]
+    },
+    {
+        "category": "Backend",
+        "skills": ["Flask", "Pydantic"]
+    },
+    {
+        "category": "IaC",
+        "skills": ["Terraform", "Docker", "Git", "GitOps/ArgoCD", "CICD"]
+    },
+    {
+        "category": "AWS Services",
+        "skills": ["Personalize", "Rekognition", "Neptune", "EC2", "Lambda", "Kinesis", "Bedrock"]
+    },
+    {
+        "category": "GenAI / RAG / MLOps",
+        "skills": ["AWS Bedrock", "PydanticAI", "LlamaIndex", "MLflow", "Databricks"]
+    },
+    {
+        "category": "Machine Learning",
+        "skills": ["GNN", "Recommendation system", "Financial Time-Series", "PyTorch", "Keras", "SageMaker", "Huggingface"]
+    },
+    {
+        "category": "Package dependencies management",
+        "skills": ["uv", "poetry"]
     }
   ],
   "projects": [
     {
-      "id": 1,
-      "title": "Real-time Analytics Dashboard",
-      "description": "A real-time dashboard for monitoring system metrics using Kafka, Spark Streaming, and React.",
-      "tech": [
-        "Kafka",
-        "Spark",
-        "React",
-        "Node.js"
-      ],
-      "link": "#"
+        "id": 1,
+        "title": "AI-labeling system for social media platform",
+        "description": "Independently designed and developed an AI-labeling system for a social media platform, integrating LLM (AWS Bedrock, PydanticAI), Flask, Kafka, and Dagster to create a complete data processing pipeline.",
+        "tech": ["LLM", "AWS Bedrock", "PydanticAI", "Flask", "Kafka", "Dagster"],
+        "link": ""
     },
     {
-      "id": 2,
-      "title": "Data Warehouse Migration",
-      "description": "Migrated 50TB of data from Oracle to Snowflake with zero downtime.",
-      "tech": [
-        "Snowflake",
-        "Python",
-        "Airflow",
-        "SQL"
-      ],
-      "link": "#"
+        "id": 2,
+        "title": "Multi-modal RAG system",
+        "description": "Researched and applied the latest multi-modal RAG papers, using Llamaindex with Huggingface or large-scale API implementation systems, and developed a baseline multi-modal RAG system based on the Gemini 2.5 series of large models.",
+        "tech": ["Llamaindex", "Huggingface", "Gemini 2.5"],
+        "link": ""
     },
     {
-      "id": 3,
-      "title": "ETL Pipeline Automation",
-      "description": "Automated daily ETL jobs using Airflow, reducing manual intervention by 95%.",
-      "tech": [
-        "Airflow",
-        "Python",
-        "Docker",
-        "AWS"
-      ],
-      "link": "#"
+        "id": 3,
+        "title": "Structured data RAG system",
+        "description": "Using DuckDB with Gemini-2.5-flash-lite, designed a system architecture with highly competitive retrieval time and cost, which can be used immediately after users upload files.",
+        "tech": ["DuckDB", "Gemini-2.5-flash-lite"],
+        "link": ""
+    },
+    {
+        "id": 4,
+        "title": "Text mining for customer feedback data",
+        "description": "A NLP model (LDA) was built to model topics, trying to find potential topics or keywords from the original user feedback data, and the prediction results were presented on a dashboard in Tableau.",
+        "tech": ["NLP", "LDA", "Tableau"],
+        "link": ""
+    },
+    {
+        "id": 5,
+        "title": "Personalized recommendation system (Data product)",
+        "description": "Developed the 'For You' feature of the company's product 'Promeo' from scratch, training a deep learning-based recommendation system through product interaction data to provide personalized recommendations for subscribers.",
+        "tech": ["Deep Learning", "Recommendation System"],
+        "link": ""
     }
   ]
 }
