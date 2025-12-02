@@ -9,7 +9,7 @@ const Certifications = () => {
 
     return (
         <section id="certifications" className="py-20 px-4 bg-ocean-light/30">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-3xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +21,7 @@ const Certifications = () => {
                     <div className="w-20 h-1 bg-ocean-accent mx-auto rounded-full"></div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex justify-center">
                     {certifications.map((cert, index) => (
                         <motion.div
                             key={cert.id}
@@ -29,18 +29,18 @@ const Certifications = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white/60 backdrop-blur-sm p-6 rounded-xl border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 flex items-start gap-4"
+                            className="bg-white/60 backdrop-blur-sm p-8 rounded-xl border border-white/50 shadow-md hover:shadow-lg hover:border-ocean-accent/30 transition-all duration-300 flex items-center gap-6 w-full max-w-2xl"
                         >
-                            <div className="p-3 bg-ocean-accent/10 rounded-lg shrink-0">
-                                <Award className="text-ocean-accent" size={24} />
+                            <div className="p-4 bg-ocean-accent/10 rounded-lg shrink-0">
+                                <Award className="text-ocean-accent" size={32} />
                             </div>
-                            <div>
-                                <h3 className="text-lg font-bold text-ocean-dark">{cert.title}</h3>
-                                <p className="text-ocean-dark/70 text-sm mb-1">{cert.issuer}</p>
+                            <div className="flex-1">
+                                <h3 className="text-xl font-bold text-ocean-dark mb-1">{cert.title}</h3>
+                                <p className="text-ocean-dark/70 text-base mb-2">{cert.issuer}</p>
                                 <div className="flex items-center gap-3 text-sm">
-                                    <span className="text-ocean-dark/60">{cert.date}</span>
+                                    {cert.date && <span className="text-ocean-dark/60">{cert.date}</span>}
                                     {cert.score && (
-                                        <span className="px-2 py-0.5 bg-ocean-accent/20 text-ocean-dark rounded text-xs font-medium">
+                                        <span className="px-3 py-1 bg-ocean-accent/20 text-ocean-dark rounded-full text-sm font-medium">
                                             Score: {cert.score}
                                         </span>
                                     )}

@@ -29,7 +29,7 @@ const Education = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white/60 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-sm hover:shadow-lg transition-all duration-300 group"
+                            className="bg-white/60 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-sm hover:shadow-lg transition-all duration-300 group h-full"
                         >
                             <div className="flex items-start justify-between mb-4">
                                 <div className="p-3 bg-ocean-accent/10 rounded-lg group-hover:bg-ocean-accent/20 transition-colors duration-300">

@@ -20,7 +20,7 @@ const TechStack = () => {
                     <div className="w-20 h-1 bg-ocean-accent mx-auto rounded-full"></div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {techStack.map((category, index) => (
                         <motion.div
                             key={category.category}
@@ -28,16 +28,16 @@ const TechStack = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white/40 backdrop-blur-md p-6 rounded-xl border border-white/50 hover:shadow-lg transition-all duration-300"
+                            className="bg-white/40 backdrop-blur-md p-5 rounded-xl border border-white/50 hover:shadow-lg hover:border-ocean-accent/30 transition-all duration-300 flex flex-col h-full"
                         >
-                            <h3 className="text-xl font-semibold text-ocean-dark mb-4 border-b border-ocean-dark/10 pb-2">
+                            <h3 className="text-lg font-semibold text-ocean-dark mb-3 border-b border-ocean-dark/10 pb-2">
                                 {category.category}
                             </h3>
                             <div className="flex flex-wrap gap-2">
                                 {category.skills.map((skill) => (
                                     <span
                                         key={skill}
-                                        className="px-3 py-1 bg-ocean-accent/10 text-ocean-dark/80 rounded-full text-sm font-medium hover:bg-ocean-accent/20 transition-colors"
+                                        className="px-2.5 py-1 bg-ocean-accent/10 text-ocean-dark/80 rounded-full text-sm font-medium hover:bg-ocean-accent/20 hover:scale-105 transition-all duration-200"
                                     >
                                         {skill}
                                     </span>

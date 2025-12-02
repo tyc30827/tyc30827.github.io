@@ -8,7 +8,7 @@ const Hero = () => {
     const { name, role, bio, profilePicture, socials, email } = portfolioData.personalInfo;
 
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden text-center px-4 pt-0 pb-20">
+        <section className="relative flex flex-col items-center justify-center overflow-hidden text-center px-4 py-16 md:py-20">
             {/* Background Wave Animation */}
             <div className="absolute inset-0 z-0 opacity-30">
                 <motion.div
@@ -45,7 +45,7 @@ const Hero = () => {
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8 }}
-                    className="mb-8 relative"
+                    className="mb-6 relative"
                 >
                     <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white/50 shadow-xl relative z-10">
                         <img
@@ -80,7 +80,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="text-lg md:text-xl text-ocean-dark/80 leading-relaxed max-w-2xl mb-10"
+                    className="text-lg md:text-xl text-ocean-dark/80 leading-relaxed max-w-2xl mb-8"
                 >
                     {bio}
                 </motion.p>
@@ -120,21 +120,6 @@ const Hero = () => {
                 </motion.div>
             </div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-                className="absolute bottom-10 z-10"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-            >
-                <a
-                    href="#projects"
-                    aria-label="Scroll to projects"
-                    className="flex flex-col items-center gap-2 text-ocean-dark/50 hover:text-ocean-accent transition-colors cursor-pointer group"
-                >
-                    <span className="text-sm font-medium tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Work</span>
-                    <ArrowDown size={32} className="group-hover:scale-110 transition-transform duration-300" />
-                </a>
-            </motion.div>
         </section>
     );
 };

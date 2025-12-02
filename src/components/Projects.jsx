@@ -30,7 +30,7 @@ const Projects = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             whileHover={{ y: -10 }}
-                            className="bg-white/50 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-white/50 group flex flex-col"
+                            className="bg-white/50 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-white/50 group flex flex-col h-full"
                         >
                             <div className="p-8 flex flex-col h-full">
                                 <h3 className="text-xl font-bold text-ocean-dark mb-3 group-hover:text-ocean-accent transition-colors">
