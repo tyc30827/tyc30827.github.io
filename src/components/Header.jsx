@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Printer } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
 
 const Header = () => {
@@ -10,6 +10,10 @@ const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const { socials, email } = portfolioData.personalInfo;
+
+    const handlePrint = () => {
+        window.print();
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -81,6 +85,17 @@ const Header = () => {
                         {socials.linkedin && <SocialIcon name="linkedin" url={socials.linkedin} />}
                         {socials.github && <SocialIcon name="github" url={socials.github} />}
                         {email && <SocialIcon name="email" url={email} />}
+
+                        <div className="h-6 w-px bg-ocean-dark/10 mx-2"></div>
+
+                        <button
+                            onClick={handlePrint}
+                            className="text-ocean-dark/70 hover:text-ocean-accent transition-colors duration-300 flex items-center gap-2 group"
+                            title="Print Resume"
+                        >
+                            <Printer size={20} />
+                            <span className="text-sm font-medium hidden xl:inline">Print</span>
+                        </button>
                     </div>
                 </nav>
 
@@ -114,10 +129,19 @@ const Header = () => {
                                     </a>
                                 </li>
                             ))}
-                            <li className="pt-4 border-t border-ocean-dark/10 flex space-x-6">
-                                {socials.linkedin && <SocialIcon name="linkedin" url={socials.linkedin} />}
-                                {socials.github && <SocialIcon name="github" url={socials.github} />}
-                                {email && <SocialIcon name="email" url={email} />}
+                            <li className="pt-4 border-t border-ocean-dark/10 flex items-center justify-between">
+                                <div className="flex space-x-6">
+                                    {socials.linkedin && <SocialIcon name="linkedin" url={socials.linkedin} />}
+                                    {socials.github && <SocialIcon name="github" url={socials.github} />}
+                                    {email && <SocialIcon name="email" url={email} />}
+                                </div>
+                                <button
+                                    onClick={handlePrint}
+                                    className="text-ocean-dark/70 hover:text-ocean-accent transition-colors duration-300 flex items-center gap-2"
+                                >
+                                    <Printer size={20} />
+                                    <span className="text-sm font-medium">Print</span>
+                                </button>
                             </li>
                         </ul>
                     </motion.div>

@@ -11,9 +11,9 @@ const Experience = () => {
     const highlightMetrics = (text) => {
         // Pattern to match percentages, numbers with +/-, and key achievements
         const patterns = [
-            { regex: /(\d+%)/g, icon: TrendingDown, color: 'text-green-600', bgColor: 'bg-green-50' },
-            { regex: /(\d+\+?\s*(?:times|engineers|years))/gi, icon: Users, color: 'text-blue-600', bgColor: 'bg-blue-50' },
-            { regex: /(hundreds of millions|GB-level|near real-time|end-to-end)/gi, icon: Zap, color: 'text-purple-600', bgColor: 'bg-purple-50' },
+            { regex: /(\d+%)/g, icon: TrendingDown, color: 'text-ocean-accent', bgColor: 'bg-ocean-accent/10' },
+            { regex: /(\d+\+?\s*(?:times|engineers|years))/gi, icon: Users, color: 'text-ocean-dark', bgColor: 'bg-ocean-dark/5' },
+            { regex: /(hundreds of millions|GB-level|near real-time|end-to-end)/gi, icon: Zap, color: 'text-ocean-accent', bgColor: 'bg-ocean-accent/10' },
         ];
 
         let result = text;
