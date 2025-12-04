@@ -3,9 +3,26 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
+import { useState, useMemo } from 'react';
 
 const Projects = () => {
     const { projects } = portfolioData;
+    const [selectedTech, setSelectedTech] = useState('All');
+
+    // Extract all unique tech tags from all projects
+    const allTechTags = useMemo(() => {
+        const techSet = new Set();
+        projects.forEach(project => {
+            project.tech.forEach(tech => techSet.add(tech));
+        });
+        return ['All', ...Array.from(techSet).sort()];
+    }, [projects]);
+
+    // Filter projects based on selected tech
+    const filteredProjects = useMemo(() => {
+        if (selectedTech === 'All') return projects;
+        return projects.filter(project => project.tech.includes(selectedTech));
+    }, [selectedTech, projects]);
 
     return (
         <section id="projects" className="py-20 px-4">
@@ -15,20 +32,56 @@ const Projects = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    className="text-center mb-12"
                 >
                     <h2 className="text-3xl md:text-4xl font-bold text-ocean-dark mb-4">Featured Projects</h2>
                     <div className="w-20 h-1 bg-ocean-accent mx-auto rounded-full"></div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
+                {/* Tech Filter */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="mb-12"
+                >
+                    <div className="flex flex-wrap justify-center gap-3">
+                        {allTechTags.map((tech) => (
+                            <motion.button
+                                key={tech}
+                                onClick={() => setSelectedTech(tech)}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                                    selectedTech === tech
+                                        ? 'bg-ocean-accent text-white shadow-lg'
+                                        : 'bg-white/50 text-ocean-dark/70 hover:bg-white/80 border border-ocean-dark/10'
+                                }`}
+                            >
+                                {tech}
+                            </motion.button>
+                        ))}
+                    </div>
+                    <p className="text-center mt-4 text-ocean-dark/60 text-sm">
+                        {selectedTech === 'All'
+                            ? `Showing all ${projects.length} projects`
+                            : `Showing ${filteredProjects.length} project${filteredProjects.length !== 1 ? 's' : ''} with ${selectedTech}`}
+                    </p>
+                </motion.div>
+
+                <motion.div
+                    layout
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
+                    {filteredProjects.map((project, index) => (
                         <motion.div
                             key={project.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            layout
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                            transition={{ duration: 0.3, delay: index * 0.05 }}
                             whileHover={{ y: -10 }}
                             className="bg-white/50 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-white/50 group flex flex-col h-full"
                         >
@@ -51,7 +104,7 @@ const Projects = () => {
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
