@@ -57,7 +57,7 @@ const Header = () => {
         >
             <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
                 <a href="#" className="text-2xl font-bold text-ocean-dark tracking-tight">
-                    WL<span className="text-ocean-accent">.</span>
+                    Willie<span className="text-ocean-accent">.</span>
                 </a>
 
                 {/* Desktop Navigation */}

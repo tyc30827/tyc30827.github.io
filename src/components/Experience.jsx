@@ -1,11 +1,41 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Briefcase } from 'lucide-react';
+import { Briefcase, TrendingDown, Users, Award, Zap } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
 
 const Experience = () => {
     const { experience } = portfolioData;
+
+    // Function to highlight key metrics in text
+    const highlightMetrics = (text) => {
+        // Pattern to match percentages, numbers with +/-, and key achievements
+        const patterns = [
+            { regex: /(\d+%)/g, icon: TrendingDown, color: 'text-green-600', bgColor: 'bg-green-50' },
+            { regex: /(\d+\+?\s*(?:times|engineers|years))/gi, icon: Users, color: 'text-blue-600', bgColor: 'bg-blue-50' },
+            { regex: /(hundreds of millions|GB-level|near real-time|end-to-end)/gi, icon: Zap, color: 'text-purple-600', bgColor: 'bg-purple-50' },
+        ];
+
+        let result = text;
+        const highlights = [];
+
+        patterns.forEach(({ regex, color, bgColor }) => {
+            const matches = text.match(regex);
+            if (matches) {
+                matches.forEach(match => {
+                    if (!highlights.includes(match)) {
+                        highlights.push(match);
+                        result = result.replace(
+                            match,
+                            `<span class="font-bold ${color} ${bgColor} px-1.5 py-0.5 rounded">${match}</span>`
+                        );
+                    }
+                });
+            }
+        });
+
+        return result;
+    };
 
     return (
         <section id="experience" className="py-20 px-4 bg-ocean-bg">
@@ -57,11 +87,11 @@ const Experience = () => {
                                             job.description.map((item, i) => (
                                                 <li key={i} className="flex items-start gap-3 text-ocean-dark/80 leading-relaxed">
                                                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-ocean-accent shrink-0"></span>
-                                                    <span>{item}</span>
+                                                    <span dangerouslySetInnerHTML={{ __html: highlightMetrics(item) }} />
                                                 </li>
                                             ))
                                         ) : (
-                                            <li className="text-ocean-dark/80 leading-relaxed">{job.description}</li>
+                                            <li className="text-ocean-dark/80 leading-relaxed" dangerouslySetInnerHTML={{ __html: highlightMetrics(job.description) }} />
                                         )}
                                     </ul>
                                 </div>
