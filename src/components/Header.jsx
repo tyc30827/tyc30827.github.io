@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github, Linkedin, Mail, Printer } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Download } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
 
 const Header = () => {
@@ -10,10 +10,6 @@ const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const { socials, email } = portfolioData.personalInfo;
-
-    const handlePrint = () => {
-        window.print();
-    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -65,13 +61,13 @@ const Header = () => {
                 </a>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center space-x-8">
-                    <ul className="flex space-x-6">
+                <nav className="hidden lg:flex items-center gap-4">
+                    <ul className="flex gap-3">
                         {navLinks.map((link) => (
                             <li key={link.name}>
                                 <a
                                     href={link.href}
-                                    className="text-ocean-dark/80 hover:text-ocean-accent font-medium transition-colors duration-300 text-sm uppercase tracking-wide"
+                                    className="text-ocean-dark/80 hover:text-ocean-accent font-medium transition-colors duration-300 text-xs tracking-wide whitespace-nowrap"
                                 >
                                     {link.name}
                                 </a>
@@ -79,29 +75,29 @@ const Header = () => {
                         ))}
                     </ul>
 
-                    <div className="h-6 w-px bg-ocean-dark/10 mx-4"></div>
+                    <div className="h-5 w-px bg-ocean-dark/10"></div>
 
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center gap-2">
                         {socials.linkedin && <SocialIcon name="linkedin" url={socials.linkedin} />}
                         {socials.github && <SocialIcon name="github" url={socials.github} />}
-                        {email && <SocialIcon name="email" url={email} />}
 
-                        <div className="h-6 w-px bg-ocean-dark/10 mx-2"></div>
+                        <div className="h-5 w-px bg-ocean-dark/10 mx-1"></div>
 
-                        <button
-                            onClick={handlePrint}
-                            className="text-ocean-dark/70 hover:text-ocean-accent transition-colors duration-300 flex items-center gap-2 group"
-                            title="Print Resume"
+                        <a
+                            href="/Willie_Huang_Resume.pdf"
+                            download="Willie_Huang_Resume.pdf"
+                            className="text-ocean-dark/70 hover:text-ocean-accent transition-colors duration-300 flex items-center gap-1"
+                            title="Download Resume"
                         >
-                            <Printer size={20} />
-                            <span className="text-sm font-medium hidden xl:inline">Print</span>
-                        </button>
+                            <Download size={16} />
+                            <span className="text-xs font-medium hidden xl:inline">Resume</span>
+                        </a>
                     </div>
                 </nav>
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-ocean-dark"
+                    className="lg:hidden text-ocean-dark"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -115,7 +111,7 @@ const Header = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white/95 backdrop-blur-md border-t border-ocean-light overflow-hidden"
+                        className="lg:hidden bg-white/95 backdrop-blur-md border-t border-ocean-light overflow-hidden"
                     >
                         <ul className="flex flex-col p-4 space-y-4">
                             {navLinks.map((link) => (
@@ -129,19 +125,22 @@ const Header = () => {
                                     </a>
                                 </li>
                             ))}
-                            <li className="pt-4 border-t border-ocean-dark/10 flex items-center justify-between">
-                                <div className="flex space-x-6">
-                                    {socials.linkedin && <SocialIcon name="linkedin" url={socials.linkedin} />}
-                                    {socials.github && <SocialIcon name="github" url={socials.github} />}
-                                    {email && <SocialIcon name="email" url={email} />}
+                            <li className="pt-4 border-t border-ocean-dark/10">
+                                <div className="flex items-center justify-between mb-3">
+                                    <div className="flex space-x-6">
+                                        {socials.linkedin && <SocialIcon name="linkedin" url={socials.linkedin} />}
+                                        {socials.github && <SocialIcon name="github" url={socials.github} />}
+                                        {email && <SocialIcon name="email" url={email} />}
+                                    </div>
                                 </div>
-                                <button
-                                    onClick={handlePrint}
-                                    className="text-ocean-dark/70 hover:text-ocean-accent transition-colors duration-300 flex items-center gap-2"
+                                <a
+                                    href="/Willie_Huang_Resume.pdf"
+                                    download="Willie_Huang_Resume.pdf"
+                                    className="w-full py-3 px-4 bg-ocean-accent text-white rounded-lg hover:bg-ocean-dark transition-colors duration-300 flex items-center justify-center gap-2 font-medium"
                                 >
-                                    <Printer size={20} />
-                                    <span className="text-sm font-medium">Print</span>
-                                </button>
+                                    <Download size={18} />
+                                    <span>Download Resume</span>
+                                </a>
                             </li>
                         </ul>
                     </motion.div>

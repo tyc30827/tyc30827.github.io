@@ -31,10 +31,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Print Styles - Optimized for one-page resume */
+/* Print Styles - Full content resume */
 @media print {
   @page {
-    margin: 0.5cm;
+    margin: 0.8cm;
     size: A4;
   }
 
@@ -46,147 +46,232 @@ body {
   body {
     background: white !important;
     color: black !important;
-    font-size: 9pt;
-    line-height: 1.3;
+    font-size: 10pt;
+    line-height: 1.4;
   }
 
-  /* Hide unnecessary elements */
+  /* Hide only navigation and buttons */
   header,
   button,
   .no-print,
-  nav,
-  #contact {
+  nav {
     display: none !important;
   }
 
   /* Compact spacing for sections */
   section {
-    padding: 0.5rem 0 !important;
+    padding: 0.4rem 0 !important;
     page-break-inside: avoid;
   }
 
-  /* Hero section - compact */
+  /* ===== HERO: Name + Contact ===== */
   section:first-of-type {
-    padding: 1rem 0 !important;
+    padding: 0.5rem 0 !important;
     min-height: auto !important;
+    text-align: left !important;
   }
 
-  section:first-of-type h1 {
-    font-size: 16pt !important;
-    margin-bottom: 0.3rem !important;
-  }
-
-  section:first-of-type h2 {
-    font-size: 11pt !important;
-    margin-bottom: 0.3rem !important;
-  }
-
-  section:first-of-type p {
-    font-size: 9pt !important;
-    margin-bottom: 0.5rem !important;
-  }
-
-  /* Hide profile picture and decorations */
-  section:first-of-type img,
-  section:first-of-type > div > div:first-child,
+  /* Hide decorations and animations */
   section:first-of-type .absolute {
     display: none !important;
   }
 
-  /* Compact section titles */
-  h2 {
-    font-size: 13pt !important;
-    margin-bottom: 0.4rem !important;
+  section:first-of-type h1 {
+    font-size: 18pt !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  section:first-of-type h2 {
+    font-size: 12pt !important;
+    margin-bottom: 0.3rem !important;
     color: #0C4A6E !important;
-    border-bottom: 1px solid #0C4A6E;
+  }
+
+  section:first-of-type p {
+    font-size: 9pt !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Show social icons as text links */
+  section:first-of-type a {
+    font-size: 8pt !important;
+    margin-right: 1rem !important;
+  }
+
+  /* ===== ABOUT: Show all content ===== */
+  #about h2 {
+    font-size: 12pt !important;
+    margin-bottom: 0.3rem !important;
+    color: #0C4A6E !important;
+    border-bottom: 1.5pt solid #0C4A6E;
     padding-bottom: 0.2rem;
   }
 
-  h3 {
+  #about h3 {
     font-size: 10pt !important;
-    margin-bottom: 0.3rem !important;
   }
 
-  h4 {
+  #about p {
     font-size: 9pt !important;
+    line-height: 1.3 !important;
   }
 
-  /* Compact About section */
   #about .grid {
-    display: block !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
   }
 
-  #about > div > div:last-child {
-    display: none !important; /* Hide Core Strengths to save space */
+  /* ===== EXPERIENCE: Show all content ===== */
+  #experience h2 {
+    font-size: 12pt !important;
+    margin-bottom: 0.3rem !important;
+    color: #0C4A6E !important;
+    border-bottom: 1.5pt solid #0C4A6E;
+    padding-bottom: 0.2rem;
   }
 
-  /* Compact Experience */
   #experience .space-y-12 {
     gap: 0.5rem !important;
   }
 
-  #experience .md\\:flex {
-    display: block !important;
+  #experience > div > div > div > div {
+    display: grid !important;
+    grid-template-columns: auto 1fr !important;
+    gap: 1rem !important;
+  }
+
+  #experience h3 {
+    font-size: 10pt !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  #experience h4 {
+    font-size: 9pt !important;
   }
 
   #experience ul {
-    margin-top: 0.3rem !important;
+    margin-top: 0.2rem !important;
   }
 
   #experience li {
     font-size: 8pt !important;
-    margin-bottom: 0.2rem !important;
+    margin-bottom: 0.15rem !important;
+    line-height: 1.3 !important;
   }
 
-  /* Compact Projects */
+  /* ===== PROJECTS: Show all content ===== */
+  #projects h2 {
+    font-size: 12pt !important;
+    margin-bottom: 0.3rem !important;
+    color: #0C4A6E !important;
+    border-bottom: 1.5pt solid #0C4A6E;
+    padding-bottom: 0.2rem;
+  }
+
+  /* Hide tech filter */
+  #projects > div > div:nth-child(2) {
+    display: none !important;
+  }
+
   #projects .grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.5rem !important;
+    gap: 0.4rem !important;
   }
 
   #projects h3 {
     font-size: 9pt !important;
+    margin-bottom: 0.2rem !important;
   }
 
   #projects p {
-    font-size: 7pt !important;
+    font-size: 8pt !important;
     line-height: 1.2 !important;
   }
 
   #projects .flex-wrap {
-    margin-bottom: 0.2rem !important;
+    margin-top: 0.2rem !important;
   }
 
   #projects span {
-    font-size: 6pt !important;
-    padding: 1px 4px !important;
+    font-size: 7pt !important;
+    padding: 1px 3px !important;
   }
 
-  /* Compact Tech Stack */
+  /* ===== TECH STACK: Compact grid ===== */
+  #tech-stack h2 {
+    font-size: 12pt !important;
+    margin-bottom: 0.3rem !important;
+    color: #0C4A6E !important;
+    border-bottom: 1.5pt solid #0C4A6E;
+    padding-bottom: 0.2rem;
+  }
+
   #tech-stack .grid {
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 0.3rem !important;
+    gap: 0.4rem !important;
   }
 
   #tech-stack h3 {
     font-size: 8pt !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  #tech-stack ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.3rem !important;
   }
 
   #tech-stack li {
     font-size: 7pt !important;
+    display: inline-block !important;
   }
 
-  /* Compact Education & Certifications */
+  #tech-stack li::after {
+    content: " •";
+    margin-left: 0.2rem;
+  }
+
+  #tech-stack li:last-child::after {
+    content: "";
+  }
+
+  /* ===== EDUCATION & OTHER SECTIONS ===== */
+  #education h2,
+  #certifications h2,
+  #publications h2 {
+    font-size: 12pt !important;
+    margin-bottom: 0.3rem !important;
+    color: #0C4A6E !important;
+    border-bottom: 1.5pt solid #0C4A6E;
+    padding-bottom: 0.2rem;
+  }
+
+  #education h3,
+  #certifications h3,
+  #publications h3 {
+    font-size: 9pt !important;
+  }
+
+  #education h4,
+  #certifications h4 {
+    font-size: 8pt !important;
+  }
+
+  #education p,
+  #certifications p,
+  #publications p {
+    font-size: 8pt !important;
+    line-height: 1.3 !important;
+  }
+
   #education .grid,
   #certifications .grid {
+    display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 0.3rem !important;
-  }
-
-  /* Hide Publications to save space */
-  #publications {
-    display: none !important;
+    gap: 0.4rem !important;
   }
 
   /* Remove shadows and backgrounds */
@@ -200,12 +285,6 @@ body {
   .text-ocean-accent,
   [class*="text-ocean-accent"] {
     color: #0C4A6E !important;
-  }
-
-  /* Ensure links are visible */
-  a {
-    color: black !important;
-    text-decoration: none !important;
   }
 
   /* Remove animations and transitions */
