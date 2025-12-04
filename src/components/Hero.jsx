@@ -119,24 +119,6 @@ const Hero = () => {
                     </a>
                 </motion.div>
 
-                {/* Key Highlights */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.7 }}
-                    className="flex flex-wrap justify-center gap-4 mb-8"
-                >
-                    <div className="px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-ocean-accent/20 shadow-sm">
-                        <span className="text-ocean-dark font-semibold text-sm">5.5+ years experience</span>
-                    </div>
-                    <div className="px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-ocean-accent/20 shadow-sm">
-                        <span className="text-ocean-dark font-semibold text-sm">Senior positions at 3 companies</span>
-                    </div>
-                    <div className="px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-ocean-accent/20 shadow-sm">
-                        <span className="text-ocean-dark font-semibold text-sm">Top-tier publication (50+ citations)</span>
-                    </div>
-                </motion.div>
-
                 {/* CTA Buttons */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -149,12 +131,6 @@ const Hero = () => {
                         className="px-6 py-3 bg-ocean-accent text-white font-semibold rounded-full hover:bg-ocean-dark hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                         View My Projects
-                    </a>
-                    <a
-                        href="#contact"
-                        className="px-6 py-3 bg-white/80 backdrop-blur-sm text-ocean-dark font-semibold rounded-full hover:bg-white hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg border border-ocean-dark/10"
-                    >
-                        Contact Me
                     </a>
                 </motion.div>
             </div>
