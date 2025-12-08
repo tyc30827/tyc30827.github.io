@@ -9,10 +9,10 @@ const Hero = () => {
 
     return (
         <section className="relative flex flex-col items-center justify-center overflow-hidden text-center px-4 py-16 md:py-20">
-            {/* Background Wave Animation */}
-            <div className="absolute inset-0 z-0 opacity-30">
+            {/* Background Wave Animation - Optimized */}
+            <div className="absolute inset-0 z-0 opacity-25">
                 <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-64 bg-ocean-accent blur-3xl rounded-t-full"
+                    className="absolute bottom-0 left-0 right-0 h-64 bg-ocean-accent blur-xl rounded-t-full will-change-transform"
                     animate={{
                         y: [0, -20, 0],
                         scale: [1, 1.05, 1],
@@ -24,7 +24,7 @@ const Hero = () => {
                     }}
                 />
                 <motion.div
-                    className="absolute bottom-[-50px] left-0 right-0 h-64 bg-ocean-light blur-3xl rounded-t-full"
+                    className="absolute bottom-[-50px] left-0 right-0 h-64 bg-ocean-light blur-xl rounded-t-full will-change-transform"
                     animate={{
                         y: [0, -30, 0],
                         scale: [1, 1.1, 1],
@@ -54,8 +54,8 @@ const Hero = () => {
                             className="w-full h-full object-cover"
                         />
                     </div>
-                    {/* Glow Effect */}
-                    <div className="absolute inset-0 bg-ocean-accent/30 blur-2xl rounded-full -z-10 scale-110 animate-pulse"></div>
+                    {/* Glow Effect - Optimized */}
+                    <div className="absolute inset-0 bg-ocean-accent/20 blur-lg rounded-full -z-10 scale-110 will-change-transform" style={{animation: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite'}}></div>
                 </motion.div>
 
                 <motion.h2
