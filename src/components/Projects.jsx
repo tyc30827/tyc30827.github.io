@@ -7,7 +7,7 @@ import { useState, useMemo } from 'react';
 
 const Projects = () => {
     const { projects } = portfolioData;
-    const [selectedTech, setSelectedTech] = useState('All');
+    const [selectedTechs, setSelectedTechs] = useState([]);
 
     // Extract all unique tech tags from all projects
     const allTechTags = useMemo(() => {
@@ -18,11 +18,26 @@ const Projects = () => {
         return ['All', ...Array.from(techSet).sort()];
     }, [projects]);
 
-    // Filter projects based on selected tech
+    // Handle tech filter toggle
+    const handleTechToggle = (tech) => {
+        if (tech === 'All') {
+            setSelectedTechs([]);
+        } else {
+            setSelectedTechs(prev =>
+                prev.includes(tech)
+                    ? prev.filter(t => t !== tech)
+                    : [...prev, tech]
+            );
+        }
+    };
+
+    // Filter projects based on selected techs
     const filteredProjects = useMemo(() => {
-        if (selectedTech === 'All') return projects;
-        return projects.filter(project => project.tech.includes(selectedTech));
-    }, [selectedTech, projects]);
+        if (selectedTechs.length === 0) return projects;
+        return projects.filter(project =>
+            selectedTechs.some(tech => project.tech.includes(tech))
+        );
+    }, [selectedTechs, projects]);
 
     return (
         <section id="projects" className="py-20 px-4">
@@ -47,26 +62,29 @@ const Projects = () => {
                     className="mb-12"
                 >
                     <div className="flex flex-wrap justify-center gap-3">
-                        {allTechTags.map((tech) => (
-                            <motion.button
-                                key={tech}
-                                onClick={() => setSelectedTech(tech)}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
-                                    selectedTech === tech
-                                        ? 'bg-ocean-accent text-white shadow-lg'
-                                        : 'bg-white/50 text-ocean-dark/70 hover:bg-white/80 border border-ocean-dark/10'
-                                }`}
-                            >
-                                {tech}
-                            </motion.button>
-                        ))}
+                        {allTechTags.map((tech) => {
+                            const isSelected = tech === 'All' ? selectedTechs.length === 0 : selectedTechs.includes(tech);
+                            return (
+                                <motion.button
+                                    key={tech}
+                                    onClick={() => handleTechToggle(tech)}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                                        isSelected
+                                            ? 'bg-ocean-accent text-white shadow-lg'
+                                            : 'bg-white/50 text-ocean-dark/70 hover:bg-white/80 border border-ocean-dark/10'
+                                    }`}
+                                >
+                                    {tech}
+                                </motion.button>
+                            );
+                        })}
                     </div>
                     <p className="text-center mt-4 text-ocean-dark/60 text-sm">
-                        {selectedTech === 'All'
+                        {selectedTechs.length === 0
                             ? `Showing all ${projects.length} projects`
-                            : `Showing ${filteredProjects.length} project${filteredProjects.length !== 1 ? 's' : ''} with ${selectedTech}`}
+                            : `Showing ${filteredProjects.length} project${filteredProjects.length !== 1 ? 's' : ''} with ${selectedTechs.join(', ')}`}
                     </p>
                 </motion.div>
 
