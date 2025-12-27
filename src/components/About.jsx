@@ -32,14 +32,14 @@ const About = () => {
         {
             icon: Users,
             title: 'Technical Leadership',
-            description: 'Led and mentored 3 junior engineers, driving team capability and delivery excellence',
+            description: 'Led and mentored junior engineers, driving team capability and delivery excellence',
             color: 'text-purple-600',
             bgColor: 'bg-purple-50'
         },
         {
             icon: TrendingUp,
             title: 'GenAI/RAG Pioneer',
-            description: 'Cutting-edge experience with LLM integration, multi-modal RAG systems, and AWS Bedrock',
+            description: 'Cutting-edge experience in AI Agent Integration, expert in combating hallucinations and reducing system uncertainty',
             color: 'text-orange-600',
             bgColor: 'bg-orange-50'
         },

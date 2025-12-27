@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willie Huang - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 10.5pt;
+            line-height: 1.3;
+            color: #000;
+            background: #fff;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in 0.75in;
+        }
+
+        h1 {
+            font-size: 26pt;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 6pt;
+            letter-spacing: 0.5pt;
+        }
+
+        .contact {
+            text-align: center;
+            font-size: 10pt;
+            margin-bottom: 14pt;
+        }
+
+        .contact a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 11pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 2pt solid #000;
+            margin-top: 12pt;
+            margin-bottom: 8pt;
+            padding-bottom: 2pt;
+            letter-spacing: 1pt;
+        }
+
+        .job-header, .edu-header {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8pt;
+            margin-bottom: 3pt;
+        }
+
+        .job-title, .school-name {
+            font-weight: bold;
+        }
+
+        .job-role, .degree {
+            font-style: italic;
+            margin-bottom: 3pt;
+        }
+
+        ul {
+            margin-left: 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 2pt;
+            padding-left: 12pt;
+            position: relative;
+        }
+
+        li:before {
+            content: "-";
+            position: absolute;
+            left: 0;
+        }
+
+        .publication {
+            margin-top: 3pt;
+            margin-bottom: 3pt;
+        }
+
+        .publication-title {
+            font-weight: bold;
+        }
+
+        .skills-section {
+            margin-top: 4pt;
+        }
+
+        .skill-category {
+            margin-bottom: 3pt;
+        }
+
+        .skill-category strong {
+            font-weight: bold;
+        }
+
+        @media print {
+            body {
+                padding: 0.5in 0.75in;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Willie Huang</h1>
+    <div class="contact">
+        tyc30827@gmail.com • <a href="https://www.linkedin.com/in/willie-huang-ba79a9199/">Willie Huang</a> • <a href="https://github.com/tyc30827">github.com/tyc30827</a>
+    </div>
+
+    <h2>Work Experience</h2>
+
+    <div class="job-header">
+        <span class="job-title">XRSpace Co., Ltd. | Taipei, Taiwan</span>
+        <span>Aug 2024 - Present</span>
+    </div>
+    <div class="job-role">Senior Data Engineer / MLOps Engineer</div>
+    <ul>
+        <li>Designed and developed AI-labeling system using LLM (AWS Bedrock, PydanticAI), Flask, Kafka, and Dagster for automated content tagging</li>
+        <li>Built AI agent with dual-layer memory system and optimized RAG knowledge base to <strong>combating hallucinations</strong> and <strong>reducing system uncertainty</strong>, achieving <strong>100% improvement in context relevance (0.35→0.7)</strong> and <strong>39% improvement in coverage (0.7→0.97)</strong></li>
+        <li>Engineered end-to-end Avatar data pipeline for Japan app launch in <strong>2 sprints</strong>, coordinating <strong>7 cross-functional teams</strong> with dbt-governed BigQuery transformations and Looker Studio dashboards</li>
+        <li>Optimized BigQuery data warehouse (clustering/partitioning) and complex SQL queries, reducing query costs by <strong>90%</strong></li>
+        <li>Led data platform infrastructure (Airbyte, dbt, Dagster, Terraform) achieving full automation and mentored junior engineers as Code Owner</li>
+    </ul>
+
+    <div class="job-header">
+        <span class="job-title">CyberLink Corp. | New Taipei, Taiwan</span>
+        <span>Oct 2023 - Aug 2024</span>
+    </div>
+    <div class="job-role">Senior Data Engineer</div>
+    <ul>
+        <li>Built NLP model (LDA) for customer feedback analysis and visualization in Tableau</li>
+        <li>Developed data pipelines with Airflow and Airbyte to collect mobile install data</li>
+        <li>Migrated data infrastructure from MSSQL to AWS S3 and Athena</li>
+    </ul>
+
+    <div class="job-header">
+        <span class="job-title">CyberLink Corp. | New Taipei, Taiwan</span>
+        <span>Jun 2020 - Oct 2023</span>
+    </div>
+    <div class="job-role">Data Scientist and Engineer</div>
+    <ul>
+        <li>Built personalized recommendation system, improving CTR from <strong>&lt;1% to 30-60%</strong></li>
+        <li>Developed GNN-based user preference system using AWS Neptune</li>
+        <li>Implemented MLOps practices with MLflow for model lifecycle management</li>
+    </ul>
+
+    <h2>Education</h2>
+
+    <div class="job-header">
+        <span class="school-name">National Chiao Tung University | Hsinchu, Taiwan</span>
+        <span>Sep 2017 - Aug 2019</span>
+    </div>
+    <div class="degree">Master of Science in Information Management</div>
+    <div class="publication">
+        <span class="publication-title">Publication:</span> First Author in <strong>Information Fusion</strong> (Top-tier AI Journal, 50+ Citations) | <a href="https://www.sciencedirect.com/science/article/abs/pii/S1566253522001750">Attentive gated graph sequence neural network-based time-series information fusion for financial trading</a>
+    </div>
+
+    <div class="job-header">
+        <span class="school-name">National Cheng Kung University | Tainan, Taiwan</span>
+        <span>Sep 2013 - Jun 2017</span>
+    </div>
+    <div class="degree">Bachelor of Science in Industrial and Information Management</div>
+
+    <h2>Skills & Certifications</h2>
+
+    <div class="skills-section">
+        <div class="skill-category">
+            <strong>Programming Languages:</strong> Python, SQL, Java, C++/C
+        </div>
+        <div class="skill-category">
+            <strong>Data Engineering Tools:</strong> Airflow, Dagster, Airbyte, dbt (Data Build Tool), Apache Kafka, Terraform
+        </div>
+        <div class="skill-category">
+            <strong>Databases / Data Warehouse:</strong> PostgreSQL, MongoDB, BigQuery, AWS Athena, AWS S3, DuckDB, MySQL, SQL Server
+        </div>
+        <div class="skill-category">
+            <strong>Machine Learning & MLOps:</strong> PyTorch, Keras, MLflow, Databricks, AWS SageMaker, GNN, Recommendation system, Financial Time-Series, Huggingface
+        </div>
+        <div class="skill-category">
+            <strong>GenAI / RAG / MLOps:</strong> AWS Bedrock, AWS Bedrock Knowledge Bases, PydanticAI, LlamaIndex
+        </div>
+        <div class="skill-category">
+            <strong>Backend:</strong> Flask, Pydantic, FastAPI, Dramatiq
+        </div>
+        <div class="skill-category">
+            <strong>Infrastructure:</strong> Docker, Git, GitOps/ArgoCD
+        </div>
+        <div class="skill-category">
+            <strong>AWS Services:</strong> Bedrock, Personalize, Rekognition, Neptune, EC2, Lambda, Kinesis
+        </div>
+        <div class="skill-category">
+            <strong>Data Visualization & BI:</strong> GA4, Looker Studio, Superset, Tableau
+        </div>
+        <div class="skill-category">
+            <strong>Package dependencies management:</strong> uv, poetry
+        </div>
+        <div class="skill-category">
+            <strong>Certifications:</strong> TOEIC 845
+        </div>
+    </div>
+</body>
+</html>

@@ -20,12 +20,12 @@
       "duration": "2024/8 - Present",
       "description": [
           "Host all of the development about the AI-labeling system for a social media platform, integrating LLM (AWS Bedrock, PydanticAI), Flask, Kafka, and Dagster to establish a complete data processing pipeline.",
-          "Engineered AI agent memory architecture with dual-layer system (conversation & customer summaries) to combat hallucinations and maintain context across sessions.",
-          "Optimized knowledge base retrieval through multi-scale chunking and QA augmentation, achieving 100% improvement in context relevance (0.35→0.7) and 39% improvement in coverage (0.7→0.97).",
+          "Engineered AI agent memory architecture with dual-layer system (conversation & customer summaries) to systematically combat hallucinations and maintain high context reliability across multi-turn sessions.",
+          "Optimized knowledge base retrieval through multi-scale chunking and QA augmentation, reducing system uncertainty, achieving 100% improvement in context relevance (0.35→0.7) and 39% improvement in coverage (0.7→0.97).",
           "Engineered an end-to-end Avatar parts data pipeline supporting the critical Japan app launch in 2 sprints. This involved coordinating 7 cross-functional teams and tackling the complex challenge of parsing XRS binary files from S3/MongoDB into structured data. All BigQuery transformation logic was governed by dbt for testing and reliability, culminating in a Looker Studio dashboard for PM and Marketing teams.",
           "Drive data platform architecture optimization, system design, and operation of core infrastructure (Airbyte managed via Terraform, dbt, Dagster, BigQuery), achieving full automation and standardization of data processing flows.",
           "Optimize complex SQL queries and BigQuery data structure (clustering/partitioning), successfully reducing BigQuery query costs and computational usage by 90%.",
-          "Led and mentored 3 junior engineers on fundamental data engineering concepts, system design, and technical culture, significantly enhancing the team's overall technical proficiency and delivery capabilities."
+          "Led and mentored junior engineers on fundamental data engineering concepts, system design, and technical culture, significantly enhancing the team's overall technical proficiency and delivery capabilities."
       ]
     },
     {
@@ -132,9 +132,9 @@
   "projects": [
     {
         "id": 1,
-        "title": "AI Agent Intelligence Enhancement System",
-        "description": "Built comprehensive AI agent system enhancements including dual-layer memory architecture (conversation & customer summaries) to eliminate hallucinations and maintain context. Optimized knowledge base through systematic evaluation, experimenting with multiple chunking strategies and QA augmentation techniques. Deployed multi-scale chunking mechanism that dramatically improved production performance: context relevance 100% (0.35→0.7), context coverage 39% (0.7→0.97).",
-        "tech": ["Python", "LLM", "AWS Bedrock", "AWS Bedrock Knowledge Bases", "PostgreSQL", "Multi-scale Chunking"],
+        "title": "Production AI Agent System Optimization",
+        "description": "Implemented dual-layer memory system (conversation & customer summaries) for production AI agent to reduce hallucinations and maintain conversation context. Conducted systematic evaluation on knowledge base retrieval, experimenting with chunking strategies and QA augmentation. Deployed multi-scale chunking solution that improved production metrics: context relevance from 0.35 to 0.7, context coverage from 0.7 to 0.97.",
+        "tech": ["Python", "LLM", "AWS Bedrock", "AWS Bedrock Knowledge Bases", "PostgreSQL"],
         "link": ""
     },
     {

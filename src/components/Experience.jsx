@@ -13,7 +13,8 @@ const Experience = () => {
         const patterns = [
             { regex: /(\d+%)/g, icon: TrendingDown, color: 'text-ocean-accent', bgColor: 'bg-ocean-accent/10' },
             { regex: /(\d+\+?\s*(?:times|engineers|years))/gi, icon: Users, color: 'text-ocean-dark', bgColor: 'bg-ocean-dark/5' },
-            { regex: /(hundreds of millions|GB-level|near real-time|end-to-end|7 cross-functional|2 sprints|3 junior)/gi, icon: Zap, color: 'text-ocean-accent', bgColor: 'bg-ocean-accent/10' },
+            { regex: /(combat hallucinations|hallucinations|reducing system uncertainty|uncertainty)/gi, icon: Zap, color: 'text-ocean-accent', bgColor: 'bg-ocean-accent/10' },
+            { regex: /(hundreds of millions|GB-level|near real-time|end-to-end|7 cross-functional|2 sprints)/gi, icon: Zap, color: 'text-ocean-accent', bgColor: 'bg-ocean-accent/10' },
         ];
 
         let result = text;
