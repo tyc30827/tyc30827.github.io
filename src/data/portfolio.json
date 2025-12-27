@@ -94,7 +94,7 @@
     },
     {
         "category": "Databases / Data Warehouse",
-        "skills": ["PostgreSQL", "MongoDB", "BigQuery", "AWS Athena", "AWS S3/MinIO", "DuckDB", "MySQL", "SQL Server"]
+        "skills": ["PostgreSQL", "MongoDB", "BigQuery", "AWS Athena", "AWS S3", "DuckDB", "MySQL", "SQL Server"]
     },
     {
         "category": "Data Engineering",
@@ -106,7 +106,7 @@
     },
     {
         "category": "Backend",
-        "skills": ["Flask", "Pydantic", "FastAPI"]
+        "skills": ["Flask", "Pydantic", "FastAPI", "Dramatiq"]
     },
     {
         "category": "Infrastructure",
@@ -118,11 +118,11 @@
     },
     {
         "category": "GenAI / RAG / MLOps",
-        "skills": ["AWS Bedrock", "PydanticAI", "LlamaIndex", "MLflow", "Databricks"]
+        "skills": ["AWS Bedrock", "AWS Bedrock Knowledge Bases", "PydanticAI", "LlamaIndex", "MLflow", "Databricks"]
     },
     {
         "category": "Machine Learning",
-        "skills": ["GNN", "Recommendation system", "Financial Time-Series", "PyTorch", "Keras", "AWS SageMaker"]
+        "skills": ["GNN", "Recommendation system", "Financial Time-Series", "PyTorch", "Keras", "AWS SageMaker", "AWS Personalize", "Huggingface", "LDA", "LLM", "NLP"]
     },
     {
         "category": "Package dependencies management",
@@ -141,7 +141,7 @@
         "id": 2,
         "title": "End-to-end data pipeline for Avatar parts",
         "description": "Engineered an end-to-end Avatar parts data pipeline supporting the critical Japan app launch in 2 sprints. This involved coordinating 7 cross-functional teams and tackling the complex challenge of parsing XRS binary files from S3/MongoDB into structured data. All BigQuery transformation logic was governed by dbt for testing and reliability, culminating in a Looker Studio dashboard for PM and Marketing teams.",
-        "tech": ["Python", "SQL", "Dagster", "MongoDB", "AWS S3", "BigQuery", "DBT", "Looker Studio"]  
+        "tech": ["Python", "SQL", "Dagster", "MongoDB", "AWS S3", "BigQuery", "dbt (Data Build Tool)", "Looker Studio"]  
     },
     {
         "id": 3,

@@ -11,7 +11,7 @@ const About = () => {
         { icon: Calendar, label: 'Experience', value: '5.5+ Years', color: 'text-blue-600', bgColor: 'bg-blue-50' },
         { icon: Briefcase, label: 'Current Role', value: 'Senior Data/MLOps Engineer', color: 'text-purple-600', bgColor: 'bg-purple-50' },
         { icon: MapPin, label: 'Location', value: 'Taipei, Taiwan', color: 'text-green-600', bgColor: 'bg-green-50' },
-        { icon: Code, label: 'Core Focus', value: 'Data Eng • MLOps • GenAI', color: 'text-orange-600', bgColor: 'bg-orange-50' },
+        { icon: Code, label: 'Core Focus', value: 'Data Engineering • MLOps • GenAI', color: 'text-orange-600', bgColor: 'bg-orange-50' },
     ];
 
     const coreStrengths = [
