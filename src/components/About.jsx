@@ -73,8 +73,19 @@ const About = () => {
                             <span className="w-1 h-5 bg-ocean-accent rounded-full"></span>
                             Professional Summary
                         </h3>
-                        <p className="text-base text-ocean-dark/80 leading-relaxed">
-                            {description}
+                        <p className="text-base text-ocean-dark/80 leading-relaxed space-y-4">
+                            <span>
+                                Senior Data and MLOps Engineer with over 5.5 years of experience in implementing production-grade data infrastructures and AI-driven applications.
+                                My work focuses on the practical lifecycle of data delivery, from building automated AI-driven pipelines with Dagster and Kafka to
+                                optimizing cloud warehouse performance, including a documented 90% reduction in BigQuery operational costs.
+                            </span>
+                            <br /><br />
+                            <span>
+                                I specialize in landing GenAI solutions by implementing various RAG architectures designed to improve retrieval performance and
+                                minimize hallucinations within complex knowledge systems. By designing AI Agent frameworks with practical long/short-term memory layers
+                                (conversation vs. customer summaries), I ensure reliable and deterministic user interactions. My approach combines engineering rigor with
+                                academic insights to deliver scalable AI systems for real-world business needs.
+                            </span>
                         </p>
                     </motion.div>
 
