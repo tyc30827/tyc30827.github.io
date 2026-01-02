@@ -14,6 +14,12 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Willie Huang's Personal Page",
   description: "Willie Huang's Personal Page",
+  icons: {
+    icon: [
+      { url: '/images/icon.png', type: 'image/png' },
+    ],
+    apple: '/images/icon.png',
+  },
 };
 
 export default function RootLayout({ children }) {
