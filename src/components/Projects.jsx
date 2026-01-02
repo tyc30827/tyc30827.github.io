@@ -342,25 +342,22 @@ const Projects = () => {
                     {filteredProjects.map((project) => (
                         <div
                             key={project.id}
-                            className="bg-white/60 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg hover:shadow-xl border border-white/60 group flex flex-col h-full transition-shadow duration-300 relative"
+                            className="bg-white/60 backdrop-blur-md rounded-xl overflow-hidden shadow-sm hover:shadow-md border border-white/60 group flex flex-col h-full transition-shadow duration-300 relative"
                             style={{
                                 backdropFilter: 'blur(12px)',
                                 WebkitBackdropFilter: 'blur(12px)',
                             }}
                         >
-                            {/* Glass shine effect */}
-                            <span className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent pointer-events-none"></span>
-
-                            <div className="p-8 flex flex-col h-full relative z-10">
-                                <h3 className="text-xl font-bold text-ocean-dark mb-3 group-hover:text-ocean-accent transition-colors duration-300">
+                            <div className="p-5 flex flex-col h-full relative z-10">
+                                <h3 className="text-lg font-semibold text-ocean-dark mb-2 group-hover:text-ocean-accent transition-colors duration-300">
                                     {project.title}
                                 </h3>
-                                <p className="text-ocean-dark/70 mb-6 leading-relaxed flex-grow">
+                                <p className="text-ocean-dark/70 text-sm mb-4 leading-relaxed flex-grow">
                                     {project.description}
                                 </p>
-                                <div className="flex flex-wrap gap-2 mb-6">
+                                <div className="flex flex-wrap gap-1.5 mb-4">
                                     {project.tech.map((t) => (
-                                        <span key={t} className="text-xs font-medium px-3 py-1.5 bg-white/50 backdrop-blur-sm text-ocean-dark/70 rounded-full border border-white/40 shadow-sm">
+                                        <span key={t} className="text-xs font-medium px-2 py-0.5 bg-white/50 backdrop-blur-sm text-ocean-dark/70 rounded-full border border-white/40">
                                             {t}
                                         </span>
                                     ))}

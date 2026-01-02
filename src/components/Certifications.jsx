@@ -29,14 +29,14 @@ const Certifications = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white/60 backdrop-blur-sm p-8 rounded-xl border border-white/50 shadow-md hover:shadow-lg hover:border-ocean-accent/30 transition-all duration-300 flex items-center gap-6 w-full max-w-2xl"
+                            className="bg-white/60 backdrop-blur-sm p-5 rounded-xl border border-white/50 shadow-sm hover:shadow-md hover:border-ocean-accent/30 transition-all duration-300 flex items-center gap-4 w-full max-w-2xl"
                         >
-                            <div className="p-4 bg-ocean-accent/10 rounded-lg shrink-0">
-                                <Award className="text-ocean-accent" size={32} />
+                            <div className="p-3 bg-ocean-accent/10 rounded-lg shrink-0">
+                                <Award className="text-ocean-accent" size={28} />
                             </div>
                             <div className="flex-1">
-                                <h3 className="text-xl font-bold text-ocean-dark mb-1">{cert.title}</h3>
-                                <p className="text-ocean-dark/70 text-base mb-2">{cert.issuer}</p>
+                                <h3 className="text-lg font-semibold text-ocean-dark mb-1">{cert.title}</h3>
+                                <p className="text-ocean-dark/70 text-sm mb-2">{cert.issuer}</p>
                                 <div className="flex items-center gap-3 text-sm">
                                     {cert.date && <span className="text-ocean-dark/60">{cert.date}</span>}
                                     {cert.score && (

@@ -71,7 +71,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-2xl md:text-4xl font-bold text-ocean-dark tracking-tight mb-6"
+                    className="text-2xl md:text-3xl font-semibold text-ocean-dark tracking-tight mb-4"
                 >
                     {role}
                 </motion.h1>
@@ -80,7 +80,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="text-lg md:text-xl text-ocean-dark/80 leading-relaxed max-w-2xl mb-8"
+                    className="text-base md:text-lg text-ocean-dark/80 leading-relaxed max-w-2xl mb-8"
                 >
                     {bio}
                 </motion.p>
@@ -96,26 +96,26 @@ const Hero = () => {
                         href={socials.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 bg-white/80 backdrop-blur-sm rounded-full text-ocean-dark hover:text-ocean-accent hover:scale-110 hover:shadow-lg transition-all duration-300 border border-ocean-dark/10"
+                        className="p-2.5 bg-white/80 backdrop-blur-sm rounded-full text-ocean-dark hover:text-ocean-accent hover:scale-105 hover:shadow-md transition-all duration-300 border border-ocean-dark/10"
                         title="LinkedIn"
                     >
-                        <Linkedin size={28} />
+                        <Linkedin size={22} />
                     </a>
                     <a
                         href={socials.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 bg-white/80 backdrop-blur-sm rounded-full text-ocean-dark hover:text-ocean-accent hover:scale-110 hover:shadow-lg transition-all duration-300 border border-ocean-dark/10"
+                        className="p-2.5 bg-white/80 backdrop-blur-sm rounded-full text-ocean-dark hover:text-ocean-accent hover:scale-105 hover:shadow-md transition-all duration-300 border border-ocean-dark/10"
                         title="GitHub"
                     >
-                        <Github size={28} />
+                        <Github size={22} />
                     </a>
                     <a
                         href={`mailto:${email}`}
-                        className="p-3 bg-white/80 backdrop-blur-sm rounded-full text-ocean-dark hover:text-ocean-accent hover:scale-110 hover:shadow-lg transition-all duration-300 border border-ocean-dark/10"
+                        className="p-2.5 bg-white/80 backdrop-blur-sm rounded-full text-ocean-dark hover:text-ocean-accent hover:scale-105 hover:shadow-md transition-all duration-300 border border-ocean-dark/10"
                         title="Email"
                     >
-                        <Mail size={28} />
+                        <Mail size={22} />
                     </a>
                 </motion.div>
 
@@ -128,7 +128,7 @@ const Hero = () => {
                 >
                     <a
                         href="#projects"
-                        className="px-6 py-3 bg-ocean-accent text-white font-semibold rounded-full hover:bg-ocean-dark hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                        className="px-5 py-2.5 bg-ocean-accent text-white text-sm font-semibold rounded-full hover:bg-ocean-dark hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md"
                     >
                         View My Projects
                     </a>

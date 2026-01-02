@@ -29,18 +29,18 @@ const Publications = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white/60 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 group"
+                            className="bg-white/60 backdrop-blur-sm p-5 rounded-xl border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 group"
                         >
-                            <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
-                                <div className="flex items-start gap-4">
-                                    <div className="p-2 bg-ocean-dark/5 rounded-lg mt-1 shrink-0">
-                                        <BookOpen className="text-ocean-dark" size={20} />
+                            <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-3">
+                                <div className="flex items-start gap-3">
+                                    <div className="p-2 bg-ocean-dark/5 rounded-lg mt-0.5 shrink-0">
+                                        <BookOpen className="text-ocean-dark" size={18} />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-ocean-dark group-hover:text-ocean-accent transition-colors">
+                                        <h3 className="text-lg font-semibold text-ocean-dark group-hover:text-ocean-accent transition-colors">
                                             {pub.title}
                                         </h3>
-                                        <p className="text-ocean-dark/70 font-medium mt-1">{pub.conference}</p>
+                                        <p className="text-ocean-dark/70 text-sm font-medium mt-1">{pub.conference}</p>
                                     </div>
                                 </div>
                                 <span className="text-sm font-semibold text-ocean-dark/60 bg-white px-3 py-1 rounded-full shadow-sm self-start whitespace-nowrap">

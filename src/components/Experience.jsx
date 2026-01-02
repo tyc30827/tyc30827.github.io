@@ -81,8 +81,8 @@ const Experience = () => {
                                 </div>
 
                                 {/* Content (Right Side) */}
-                                <div className="md:w-2/3 bg-white/60 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-sm hover:shadow-md transition-all duration-300">
-                                    <h3 className="text-2xl font-bold text-ocean-dark mb-6">{job.role}</h3>
+                                <div className="md:w-2/3 bg-white/60 backdrop-blur-sm p-5 rounded-xl border border-white/50 shadow-sm hover:shadow-md transition-all duration-300">
+                                    <h3 className="text-xl font-semibold text-ocean-dark mb-4">{job.role}</h3>
                                     <ul className="space-y-3">
                                         {Array.isArray(job.description) ? (
                                             job.description.map((item, i) => (

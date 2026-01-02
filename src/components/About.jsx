@@ -67,13 +67,13 @@ const About = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="lg:col-span-2 bg-white/60 p-8 rounded-2xl shadow-lg border border-white/50"
+                        className="lg:col-span-2 bg-white/60 p-5 rounded-xl shadow-sm border border-white/50"
                     >
-                        <h3 className="text-xl font-bold text-ocean-dark mb-4 flex items-center gap-2">
-                            <span className="w-1 h-6 bg-ocean-accent rounded-full"></span>
+                        <h3 className="text-lg font-semibold text-ocean-dark mb-3 flex items-center gap-2">
+                            <span className="w-1 h-5 bg-ocean-accent rounded-full"></span>
                             Professional Summary
                         </h3>
-                        <p className="text-lg text-ocean-dark/80 leading-relaxed">
+                        <p className="text-base text-ocean-dark/80 leading-relaxed">
                             {description}
                         </p>
                     </motion.div>
@@ -84,7 +84,7 @@ const About = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.3 }}
-                        className="bg-gradient-to-br from-ocean-accent/10 to-ocean-light/10 p-6 rounded-2xl shadow-lg border border-ocean-accent/20"
+                        className="bg-gradient-to-br from-ocean-accent/10 to-ocean-light/10 p-5 rounded-xl shadow-sm border border-ocean-accent/20"
                     >
                         <h3 className="text-lg font-bold text-ocean-dark mb-4">Quick Facts</h3>
                         <div className="space-y-4">
@@ -126,13 +126,13 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                                whileHover={{ y: -5 }}
-                                className="bg-white/70 p-6 rounded-xl shadow-md border border-white/50 hover:shadow-lg transition-all duration-300"
+                                whileHover={{ y: -3 }}
+                                className="bg-white/70 p-5 rounded-xl shadow-sm border border-white/50 hover:shadow-md transition-all duration-300"
                             >
-                                <div className={`${strength.bgColor} w-12 h-12 rounded-lg flex items-center justify-center mb-4`}>
-                                    <strength.icon className={strength.color} size={24} />
+                                <div className={`${strength.bgColor} w-10 h-10 rounded-lg flex items-center justify-center mb-3`}>
+                                    <strength.icon className={strength.color} size={20} />
                                 </div>
-                                <h4 className="text-lg font-bold text-ocean-dark mb-2">{strength.title}</h4>
+                                <h4 className="text-base font-semibold text-ocean-dark mb-2">{strength.title}</h4>
                                 <p className="text-ocean-dark/70 text-sm leading-relaxed">{strength.description}</p>
                             </motion.div>
                         ))}

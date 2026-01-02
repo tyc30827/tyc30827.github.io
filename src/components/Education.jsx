@@ -29,18 +29,18 @@ const Education = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white/60 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-sm hover:shadow-lg transition-all duration-300 group h-full"
+                            className="bg-white/60 backdrop-blur-sm p-5 rounded-xl border border-white/50 shadow-sm hover:shadow-md transition-all duration-300 group h-full"
                         >
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="p-3 bg-ocean-accent/10 rounded-lg group-hover:bg-ocean-accent/20 transition-colors duration-300">
-                                    <GraduationCap size={28} className="text-ocean-dark" />
+                            <div className="flex items-start justify-between mb-3">
+                                <div className="p-2 bg-ocean-accent/10 rounded-lg group-hover:bg-ocean-accent/20 transition-colors duration-300">
+                                    <GraduationCap size={24} className="text-ocean-dark" />
                                 </div>
-                                <span className="text-sm font-semibold text-ocean-accent bg-white px-3 py-1 rounded-full shadow-sm">
+                                <span className="text-xs font-semibold text-ocean-accent bg-white px-2.5 py-1 rounded-full shadow-sm">
                                     {edu.year}
                                 </span>
                             </div>
-                            <h3 className="text-xl font-bold text-ocean-dark mb-2">{edu.degree}</h3>
-                            <p className="text-ocean-dark/70 font-medium">{edu.school}</p>
+                            <h3 className="text-lg font-semibold text-ocean-dark mb-1">{edu.degree}</h3>
+                            <p className="text-ocean-dark/70 text-sm font-medium">{edu.school}</p>
                         </motion.div>
                     ))}
                 </div>
