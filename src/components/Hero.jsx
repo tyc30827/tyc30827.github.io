@@ -64,7 +64,7 @@ const Hero = () => {
                         />
                     </div>
                     {/* Glow Effect - Optimized */}
-                    <div className="absolute inset-0 bg-ocean-accent/20 blur-lg rounded-full -z-10 scale-110 will-change-transform" style={{animation: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite'}}></div>
+                    <div className="absolute inset-0 bg-ocean-accent/20 blur-lg rounded-full -z-10 scale-110 will-change-transform" style={{ animation: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}></div>
                 </motion.div>
 
                 <motion.h2
@@ -138,18 +138,18 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.9 }}
-                    className="flex flex-wrap justify-center gap-4"
+                    className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full px-4"
                 >
                     <a
                         href="#projects"
-                        className="px-5 py-2.5 bg-ocean-accent text-white text-sm font-semibold rounded-full hover:bg-ocean-dark hover:scale-105 hover:shadow-lg transition-all duration-300 shadow-md"
+                        className="px-10 py-3.5 bg-white text-ocean-dark/80 text-sm font-bold rounded-full border border-ocean-dark/10 hover:bg-ocean-accent hover:text-white hover:scale-105 hover:shadow-xl transition-all duration-300 shadow-lg text-center min-w-[200px]"
                     >
                         View My Projects
                     </a>
                     <a
                         href="/Willie_Huang_Resume.pdf"
                         download
-                        className="px-5 py-2.5 bg-white/80 backdrop-blur-sm text-ocean-dark text-sm font-semibold rounded-full hover:bg-ocean-accent hover:text-white hover:scale-105 hover:shadow-lg transition-all duration-300 shadow-md border border-ocean-dark/10"
+                        className="px-10 py-3.5 bg-white text-ocean-dark/80 text-sm font-bold rounded-full border border-ocean-dark/10 hover:bg-ocean-accent hover:text-white hover:scale-105 hover:shadow-xl transition-all duration-300 shadow-lg text-center min-w-[200px]"
                     >
                         Download Resume
                     </a>

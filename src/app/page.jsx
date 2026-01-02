@@ -8,6 +8,7 @@ import Publications from '@/components/Publications';
 import TechStack from '@/components/TechStack';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export default function Home() {
     return (
@@ -22,6 +23,7 @@ export default function Home() {
             <TechStack />
             <Projects />
             <Contact />
+            <ScrollToTop />
         </main>
     );
 }
