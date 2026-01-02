@@ -3,43 +3,52 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
     const { name, role, bio, profilePicture, socials, email } = portfolioData.personalInfo;
 
-    return (
-        <section className="relative flex flex-col items-center justify-center overflow-hidden text-center px-4 py-16 md:py-20">
-            {/* Background Wave Animation - Optimized */}
-            <div className="absolute inset-0 z-0 opacity-25">
-                <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-64 bg-ocean-accent blur-xl rounded-t-full will-change-transform"
-                    animate={{
-                        y: [0, -20, 0],
-                        scale: [1, 1.05, 1],
-                    }}
-                    transition={{
-                        duration: 5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                />
-                <motion.div
-                    className="absolute bottom-[-50px] left-0 right-0 h-64 bg-ocean-light blur-xl rounded-t-full will-change-transform"
-                    animate={{
-                        y: [0, -30, 0],
-                        scale: [1, 1.1, 1],
-                    }}
-                    transition={{
-                        duration: 7,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: 1,
-                    }}
-                />
-            </div>
+    // Multiple roles to cycle through
+    const roles = [
+        'Data Engineer',
+        'MLOps Engineer',
+        'Software Engineer'
+    ];
 
+    const [typedRole, setTypedRole] = useState('');
+    const [roleIndex, setRoleIndex] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        const currentRole = roles[roleIndex];
+        const typingSpeed = isDeleting ? 50 : 100;
+        const pauseTime = isDeleting ? 500 : 2000;
+
+        const timer = setTimeout(() => {
+            if (!isDeleting && typedRole === currentRole) {
+                // Finished typing, pause then start deleting
+                setTimeout(() => setIsDeleting(true), pauseTime);
+            } else if (isDeleting && typedRole === '') {
+                // Finished deleting, move to next role
+                setIsDeleting(false);
+                setRoleIndex((prev) => (prev + 1) % roles.length);
+            } else {
+                // Continue typing or deleting
+                setTypedRole(
+                    isDeleting
+                        ? currentRole.substring(0, typedRole.length - 1)
+                        : currentRole.substring(0, typedRole.length + 1)
+                );
+            }
+        }, typingSpeed);
+
+        return () => clearTimeout(timer);
+    }, [typedRole, isDeleting, roleIndex]);
+
+    return (
+        <section className="relative flex flex-col items-center justify-center text-center px-4 py-16 md:py-20">
             {/* Content */}
-            <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto w-full">
+            <div className="flex flex-col items-center max-w-4xl mx-auto w-full">
                 {/* Profile Picture */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
@@ -62,18 +71,23 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-ocean-accent font-semibold tracking-wider uppercase text-sm md:text-base mb-4"
+                    className="text-ocean-accent font-normal text-lg md:text-xl mb-4 tracking-tight"
+                    style={{
+                        fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif",
+                        letterSpacing: '0.01em'
+                    }}
                 >
-                    Hello, I'm Willie Huang
+                    Wei-Chia (Willie) Huang
                 </motion.h2>
 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-2xl md:text-3xl font-semibold text-ocean-dark tracking-tight mb-4"
+                    className="text-2xl md:text-3xl font-semibold text-ocean-dark tracking-tight mb-4 min-h-[2.5rem] md:min-h-[3rem]"
                 >
-                    {role}
+                    <span>{typedRole}</span>
+                    <span className="inline-block w-0.5 h-6 md:h-7 bg-ocean-accent ml-1 animate-pulse"></span>
                 </motion.h1>
 
                 <motion.p
@@ -128,9 +142,16 @@ const Hero = () => {
                 >
                     <a
                         href="#projects"
-                        className="px-5 py-2.5 bg-ocean-accent text-white text-sm font-semibold rounded-full hover:bg-ocean-dark hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md"
+                        className="px-5 py-2.5 bg-ocean-accent text-white text-sm font-semibold rounded-full hover:bg-ocean-dark hover:scale-105 hover:shadow-lg transition-all duration-300 shadow-md"
                     >
                         View My Projects
+                    </a>
+                    <a
+                        href="/Willie_Huang_Resume.pdf"
+                        download
+                        className="px-5 py-2.5 bg-white/80 backdrop-blur-sm text-ocean-dark text-sm font-semibold rounded-full hover:bg-ocean-accent hover:text-white hover:scale-105 hover:shadow-lg transition-all duration-300 shadow-md border border-ocean-dark/10"
+                    >
+                        Download Resume
                     </a>
                 </motion.div>
             </div>

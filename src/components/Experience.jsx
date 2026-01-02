@@ -20,7 +20,7 @@ const Experience = () => {
         let result = text;
         const highlights = [];
 
-        patterns.forEach(({ regex, color, bgColor }) => {
+        patterns.forEach(({ regex, color }) => {
             const matches = text.match(regex);
             if (matches) {
                 matches.forEach(match => {
@@ -28,7 +28,7 @@ const Experience = () => {
                         highlights.push(match);
                         result = result.replace(
                             match,
-                            `<span class="font-bold ${color} ${bgColor} px-1.5 py-0.5 rounded">${match}</span>`
+                            `<span class="font-bold ${color}">${match}</span>`
                         );
                     }
                 });

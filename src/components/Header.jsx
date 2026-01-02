@@ -8,6 +8,7 @@ import portfolioData from '../data/portfolio.json';
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('');
 
     const { socials, email } = portfolioData.personalInfo;
 
@@ -17,6 +18,32 @@ const Header = () => {
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // Observe all sections
+        const sections = document.querySelectorAll('section[id]');
+        sections.forEach((section) => observer.observe(section));
+
+        return () => {
+            sections.forEach((section) => observer.unobserve(section));
+        };
     }, []);
 
     const navLinks = [
@@ -63,16 +90,23 @@ const Header = () => {
                 {/* Desktop Navigation */}
                 <nav className="hidden lg:flex items-center gap-4">
                     <ul className="flex gap-3">
-                        {navLinks.map((link) => (
-                            <li key={link.name}>
-                                <a
-                                    href={link.href}
-                                    className="text-ocean-dark/80 hover:text-ocean-accent font-medium transition-colors duration-300 text-xs tracking-wide whitespace-nowrap"
-                                >
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))}
+                        {navLinks.map((link) => {
+                            const isActive = activeSection === link.href.substring(1);
+                            return (
+                                <li key={link.name}>
+                                    <a
+                                        href={link.href}
+                                        className={`text-ocean-dark/80 hover:text-ocean-accent font-medium transition-all duration-300 text-xs tracking-wide whitespace-nowrap pb-1 border-b-2 ${
+                                            isActive
+                                                ? 'border-ocean-accent text-ocean-accent'
+                                                : 'border-transparent'
+                                        }`}
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            );
+                        })}
                     </ul>
 
                     <div className="h-5 w-px bg-ocean-dark/10"></div>
@@ -114,17 +148,24 @@ const Header = () => {
                         className="lg:hidden bg-white/95 backdrop-blur-md border-t border-ocean-light overflow-hidden"
                     >
                         <ul className="flex flex-col p-4 space-y-4">
-                            {navLinks.map((link) => (
-                                <li key={link.name}>
-                                    <a
-                                        href={link.href}
-                                        className="block text-ocean-dark hover:text-ocean-accent font-medium py-2"
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                    >
-                                        {link.name}
-                                    </a>
-                                </li>
-                            ))}
+                            {navLinks.map((link) => {
+                                const isActive = activeSection === link.href.substring(1);
+                                return (
+                                    <li key={link.name}>
+                                        <a
+                                            href={link.href}
+                                            className={`block font-medium py-2 border-l-2 pl-3 transition-all duration-300 ${
+                                                isActive
+                                                    ? 'border-ocean-accent text-ocean-accent'
+                                                    : 'border-transparent text-ocean-dark hover:text-ocean-accent'
+                                            }`}
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                            {link.name}
+                                        </a>
+                                    </li>
+                                );
+                            })}
                             <li className="pt-4 border-t border-ocean-dark/10">
                                 <div className="flex items-center justify-between mb-3">
                                     <div className="flex space-x-6">

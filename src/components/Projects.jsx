@@ -10,6 +10,7 @@ const Projects = () => {
     const [selectedTechs, setSelectedTechs] = useState([]);
     const [expandedCategories, setExpandedCategories] = useState(new Set());
     const [showFilters, setShowFilters] = useState(false);
+    const [expandedProjects, setExpandedProjects] = useState(new Set());
 
     // Category icon mapping
     const categoryIcons = {
@@ -95,6 +96,19 @@ const Projects = () => {
                 newSet.delete(category);
             } else {
                 newSet.add(category);
+            }
+            return newSet;
+        });
+    };
+
+    // Toggle project description expansion
+    const toggleProject = (projectId) => {
+        setExpandedProjects(prev => {
+            const newSet = new Set(prev);
+            if (newSet.has(projectId)) {
+                newSet.delete(projectId);
+            } else {
+                newSet.add(projectId);
             }
             return newSet;
         });
@@ -339,34 +353,47 @@ const Projects = () => {
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredProjects.map((project) => (
-                        <div
-                            key={project.id}
-                            className="bg-white/60 backdrop-blur-md rounded-xl overflow-hidden shadow-sm hover:shadow-md border border-white/60 group flex flex-col h-full transition-shadow duration-300 relative"
-                            style={{
-                                backdropFilter: 'blur(12px)',
-                                WebkitBackdropFilter: 'blur(12px)',
-                            }}
-                        >
-                            <div className="p-5 flex flex-col h-full relative z-10">
-                                <h3 className="text-lg font-semibold text-ocean-dark mb-2 group-hover:text-ocean-accent transition-colors duration-300">
-                                    {project.title}
-                                </h3>
-                                <p className="text-ocean-dark/70 text-sm mb-4 leading-relaxed flex-grow">
-                                    {project.description}
-                                </p>
-                                <div className="flex flex-wrap gap-1.5 mb-4">
-                                    {project.tech.map((t) => (
-                                        <span key={t} className="text-xs font-medium px-2 py-0.5 bg-white/50 backdrop-blur-sm text-ocean-dark/70 rounded-full border border-white/40">
-                                            {t}
-                                        </span>
-                                    ))}
-                                </div>
-                                <div className="flex gap-4">
+                    {filteredProjects.map((project) => {
+                        const isExpanded = expandedProjects.has(project.id);
+                        return (
+                            <div
+                                key={project.id}
+                                className="bg-white/60 backdrop-blur-md rounded-xl overflow-hidden shadow-sm hover:shadow-md border border-white/60 group flex flex-col h-full transition-shadow duration-300 relative"
+                                style={{
+                                    backdropFilter: 'blur(12px)',
+                                    WebkitBackdropFilter: 'blur(12px)',
+                                }}
+                            >
+                                <div className="p-5 flex flex-col h-full relative z-10">
+                                    <h3 className="text-lg font-semibold text-ocean-dark mb-2 group-hover:text-ocean-accent transition-colors duration-300">
+                                        {project.title}
+                                    </h3>
+                                    <div className="mb-3">
+                                        <p
+                                            className={`text-ocean-dark/70 text-sm leading-relaxed ${
+                                                !isExpanded ? 'line-clamp-3' : ''
+                                            }`}
+                                        >
+                                            {project.description}
+                                        </p>
+                                        <button
+                                            onClick={() => toggleProject(project.id)}
+                                            className="text-ocean-accent hover:text-ocean-dark text-xs font-medium mt-1 transition-colors duration-200"
+                                        >
+                                            {isExpanded ? 'Less' : 'More'}
+                                        </button>
+                                    </div>
+                                    <div className="flex flex-wrap gap-1.5 mt-auto">
+                                        {project.tech.map((t) => (
+                                            <span key={t} className="px-2 py-0.5 bg-ocean-accent/10 text-ocean-dark/80 rounded-full text-xs font-medium hover:bg-ocean-accent/20 hover:scale-105 transition-all duration-200">
+                                                {t}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
         </section>
