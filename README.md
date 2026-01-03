@@ -40,8 +40,7 @@ Follow these steps to get the project up and running on your local machine.
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yuchen-land/Data-page.git
-   cd Data-page
+   git clone https://github.com/tyc30827/tyc30827.github.io.git
    ```
 
 2. **Install dependencies**

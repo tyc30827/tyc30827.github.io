@@ -16,12 +16,9 @@ export const metadata = {
   description: "Willie Huang's Personal Page",
   icons: {
     icon: [
-      { url: '/images/icon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/images/icon.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon.png', type: 'image/png' },
     ],
-    apple: [
-      { url: '/images/icon.png', sizes: '180x180', type: 'image/png' },
-    ],
+    apple: "/icon.png",
   },
   appleWebApp: {
     capable: true,
