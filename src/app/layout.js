@@ -20,11 +20,6 @@ export const metadata = {
     ],
     apple: "/icon.png",
   },
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: 'default',
-    title: "Willie Huang's Personal Page",
-  },
 };
 
 export default function RootLayout({ children }) {
