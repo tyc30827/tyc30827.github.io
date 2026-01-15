@@ -11,6 +11,7 @@ const Hero = () => {
     // Multiple roles to cycle through
     const roles = [
         'Data Engineer',
+        'AI Engineer',
         'MLOps Engineer',
         'Software Engineer'
     ];

@@ -5,6 +5,22 @@ import { ExternalLink, Github, ChevronDown, ChevronUp, Search, X, Code2, Databas
 import portfolioData from '../data/portfolio.json';
 import { useState, useMemo } from 'react';
 
+// Helper function to render text with **highlighted** parts
+const renderHighlightedText = (text) => {
+    if (!text) return text;
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+    return parts.map((part, index) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+            return (
+                <span key={index} className="text-ocean-accent font-medium">
+                    {part.slice(2, -2)}
+                </span>
+            );
+        }
+        return part;
+    });
+};
+
 const Projects = () => {
     const { projects, techStack } = portfolioData;
     const [selectedTechs, setSelectedTechs] = useState([]);
@@ -172,16 +188,14 @@ const Projects = () => {
                                 {/* All Button */}
                                 <button
                                     onClick={() => handleTechToggle('All')}
-                                    className={`w-full px-8 py-4 text-left font-medium transition-all duration-200 border-b border-ocean-dark/[0.08] group cursor-pointer ${
-                                        selectedTechs.length === 0
-                                            ? 'bg-ocean-accent/[0.08] text-ocean-accent'
-                                            : 'text-ocean-dark/60 hover:bg-ocean-accent/[0.03] hover:text-ocean-dark'
-                                    }`}
+                                    className={`w-full px-8 py-4 text-left font-medium transition-all duration-200 border-b border-ocean-dark/[0.08] group cursor-pointer ${selectedTechs.length === 0
+                                        ? 'bg-ocean-accent/[0.08] text-ocean-accent'
+                                        : 'text-ocean-dark/60 hover:bg-ocean-accent/[0.03] hover:text-ocean-dark'
+                                        }`}
                                 >
                                     <div className="flex items-center gap-2">
-                                        <span className={`text-sm transition-colors ${
-                                            selectedTechs.length === 0 ? 'font-semibold' : 'group-hover:font-semibold'
-                                        }`}>All Projects</span>
+                                        <span className={`text-sm transition-colors ${selectedTechs.length === 0 ? 'font-semibold' : 'group-hover:font-semibold'
+                                            }`}>All Projects</span>
                                         {selectedTechs.length === 0 && (
                                             <span className="text-xs text-ocean-accent/70">✓</span>
                                         )}
@@ -241,11 +255,10 @@ const Projects = () => {
                                                                         onClick={() => handleTechToggle(tech)}
                                                                         whileHover={{ scale: 1.02 }}
                                                                         whileTap={{ scale: 0.98 }}
-                                                                        className={`px-3.5 py-2 rounded-lg text-xs font-medium transition-all duration-200 ${
-                                                                            isSelected
-                                                                                ? 'bg-ocean-accent text-white shadow-sm'
-                                                                                : 'bg-white text-ocean-dark/60 hover:text-ocean-dark hover:bg-ocean-dark/[0.04] border border-ocean-dark/[0.12] hover:border-ocean-dark/20'
-                                                                        }`}
+                                                                        className={`px-3.5 py-2 rounded-lg text-xs font-medium transition-all duration-200 ${isSelected
+                                                                            ? 'bg-ocean-accent text-white shadow-sm'
+                                                                            : 'bg-white text-ocean-dark/60 hover:text-ocean-dark hover:bg-ocean-dark/[0.04] border border-ocean-dark/[0.12] hover:border-ocean-dark/20'
+                                                                            }`}
                                                                     >
                                                                         {tech}
                                                                     </motion.button>
@@ -298,11 +311,10 @@ const Projects = () => {
                                                                     onClick={() => handleTechToggle(tech)}
                                                                     whileHover={{ scale: 1.02 }}
                                                                     whileTap={{ scale: 0.98 }}
-                                                                    className={`px-3.5 py-2 rounded-lg text-xs font-medium transition-all duration-200 ${
-                                                                        isSelected
-                                                                            ? 'bg-ocean-accent text-white shadow-sm'
-                                                                            : 'bg-white text-ocean-dark/60 hover:text-ocean-dark hover:bg-ocean-dark/[0.04] border border-ocean-dark/[0.12] hover:border-ocean-dark/20'
-                                                                    }`}
+                                                                    className={`px-3.5 py-2 rounded-lg text-xs font-medium transition-all duration-200 ${isSelected
+                                                                        ? 'bg-ocean-accent text-white shadow-sm'
+                                                                        : 'bg-white text-ocean-dark/60 hover:text-ocean-dark hover:bg-ocean-dark/[0.04] border border-ocean-dark/[0.12] hover:border-ocean-dark/20'
+                                                                        }`}
                                                                 >
                                                                     {tech}
                                                                 </motion.button>
@@ -352,8 +364,65 @@ const Projects = () => {
                     </AnimatePresence>
                 </motion.div>
 
+                {/* All Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredProjects.map((project) => {
+                    {/* Featured Project (with image) - horizontal layout */}
+                    {filteredProjects.filter(p => p.image).map((project) => {
+                        const isExpanded = expandedProjects.has(project.id);
+                        return (
+                            <div
+                                key={project.id}
+                                className="md:col-span-2 lg:col-span-3 bg-white/60 backdrop-blur-md rounded-xl overflow-hidden shadow-sm hover:shadow-md border border-white/60 group flex flex-col lg:flex-row transition-shadow duration-300 relative"
+                                style={{
+                                    backdropFilter: 'blur(12px)',
+                                    WebkitBackdropFilter: 'blur(12px)',
+                                }}
+                            >
+                                {/* Project Image - clickable with link */}
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="relative w-full lg:w-1/2 py-4 px-4 lg:py-5 lg:px-5 overflow-hidden shrink-0 bg-gray-50 flex items-center justify-center self-start cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                                >
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-auto object-contain rounded-lg"
+                                    />
+                                </a>
+                                {/* Content - right side */}
+                                <div className="p-5 flex flex-col flex-1 relative z-10">
+                                    <div className="flex items-start justify-between gap-2 mb-2">
+                                        <h3 className="text-lg font-semibold text-ocean-dark group-hover:text-ocean-accent transition-colors duration-300">
+                                            {project.title}
+                                        </h3>
+                                    </div>
+                                    <div className="mb-3 flex-1">
+                                        <p className={`text-ocean-dark/70 text-sm leading-relaxed ${!isExpanded ? 'line-clamp-3' : ''}`}>
+                                            {renderHighlightedText(project.description)}
+                                        </p>
+                                        <button
+                                            onClick={() => toggleProject(project.id)}
+                                            className="text-ocean-accent hover:text-ocean-dark text-xs font-medium mt-1 transition-colors duration-200"
+                                        >
+                                            {isExpanded ? 'Less' : 'More'}
+                                        </button>
+                                    </div>
+                                    <div className="flex flex-wrap gap-1.5 mt-auto">
+                                        {project.tech.map((t) => (
+                                            <span key={t} className="px-2 py-0.5 bg-ocean-accent/10 text-ocean-dark/80 rounded-full text-xs font-medium hover:bg-ocean-accent/20 hover:scale-105 transition-all duration-200">
+                                                {t}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+
+                    {/* Regular Projects */}
+                    {filteredProjects.filter(p => !p.image).map((project) => {
                         const isExpanded = expandedProjects.has(project.id);
                         return (
                             <div
@@ -364,16 +433,25 @@ const Projects = () => {
                                     WebkitBackdropFilter: 'blur(12px)',
                                 }}
                             >
-                                <div className="p-5 flex flex-col h-full relative z-10">
-                                    <h3 className="text-lg font-semibold text-ocean-dark mb-2 group-hover:text-ocean-accent transition-colors duration-300">
-                                        {project.title}
-                                    </h3>
-                                    <div className="mb-3">
-                                        <p
-                                            className={`text-ocean-dark/70 text-sm leading-relaxed ${
-                                                !isExpanded ? 'line-clamp-3' : ''
-                                            }`}
-                                        >
+                                <div className="p-5 flex flex-col flex-1 relative z-10">
+                                    <div className="flex items-start justify-between gap-2 mb-2">
+                                        <h3 className="text-lg font-semibold text-ocean-dark group-hover:text-ocean-accent transition-colors duration-300">
+                                            {project.title}
+                                        </h3>
+                                        {project.link && (
+                                            <a
+                                                href={project.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="shrink-0 p-1.5 rounded-lg bg-ocean-accent/10 text-ocean-accent hover:bg-ocean-accent hover:text-white transition-all duration-200"
+                                                title="View Project"
+                                            >
+                                                <ExternalLink size={16} />
+                                            </a>
+                                        )}
+                                    </div>
+                                    <div className="mb-3 flex-1">
+                                        <p className={`text-ocean-dark/70 text-sm leading-relaxed ${!isExpanded ? 'line-clamp-3' : ''}`}>
                                             {project.description}
                                         </p>
                                         <button

@@ -10,7 +10,7 @@
     }
   },
   "about": {
-    "description": "A highly passionate Data Engineer with 5.5 years of hands-on experience in building robust, scalable data infrastructures. I excel at optimizing data pipelines and transforming complex, raw data into actionable insights. Driven by curiosity about data science, I continuously embrace new technologies to solve real-world data challenges and deliver high-impact business solutions."
+    "description": "A highly passionate Data/AI Engineer with 5.5 years of hands-on experience. Recently led a 72-hour War Room to recover a production AI Agent, coordinating cross-functional teams including founding engineers. I excel at building scalable data infrastructures and landing GenAI solutions with practical RAG architectures to combat hallucinations and reduce system uncertainty."
   },
   "experience": [
     {
@@ -19,13 +19,14 @@
       "company": "XRSpace Co., Ltd.",
       "duration": "2024/8 - Present",
       "description": [
-          "Host all of the development about the AI-labeling system for a social media platform, integrating LLM (AWS Bedrock, PydanticAI), Flask, Kafka, and Dagster to establish a complete data processing pipeline.",
-          "Engineered AI agent memory architecture with dual-layer system (conversation & customer summaries) to systematically combat hallucinations and maintain high context reliability across multi-turn sessions.",
-          "Optimized knowledge base retrieval through multi-scale chunking and QA augmentation, reducing system uncertainty, achieving 100% improvement in context relevance (0.35→0.7) and 39% improvement in coverage (0.7→0.97).",
-          "Engineered an end-to-end Avatar parts data pipeline supporting the critical Japan app launch in 2 sprints. This involved coordinating 7 cross-functional teams and tackling the complex challenge of parsing XRS binary files from S3/MongoDB into structured data. All BigQuery transformation logic was governed by dbt for testing and reliability, culminating in a Looker Studio dashboard for PM and Marketing teams.",
-          "Drive data platform architecture optimization, system design, and operation of core infrastructure (Airbyte managed via Terraform, dbt, Dagster, BigQuery), achieving full automation and standardization of data processing flows.",
-          "Optimize complex SQL queries and BigQuery data structure (clustering/partitioning), successfully reducing BigQuery query costs and computational usage by 90%.",
-          "Led and mentored junior engineers on fundamental data engineering concepts, system design, and technical culture, significantly enhancing the team's overall technical proficiency and delivery capabilities."
+        "Spearheaded a 72-hour War Room to launch the One Art Taipei AI Agent, collaborating with founding engineers and leading cross-functional teams to resolve critical hallucinations and improve the core intelligence under production pressure; designed advanced RAG architecture and authored post-event documentation to institutionalize knowledge.",
+        "Host all of the development about the AI-labeling system for a social media platform, integrating LLM (AWS Bedrock, PydanticAI), Flask, Kafka, and Dagster to establish a complete data processing pipeline.",
+        "Engineered AI agent memory architecture with dual-layer system (conversation & customer summaries) to systematically combat hallucinations and maintain high context reliability across multi-turn sessions.",
+        "Optimized knowledge base retrieval through multi-scale chunking and QA augmentation, reducing system uncertainty, achieving 100% improvement in context relevance (0.35→0.7) and 39% improvement in coverage (0.7→0.97).",
+        "Engineered an end-to-end Avatar parts data pipeline supporting the critical Japan app launch in 2 sprints. This involved coordinating 7 cross-functional teams and tackling the complex challenge of parsing XRS binary files from S3/MongoDB into structured data. All BigQuery transformation logic was governed by dbt for testing and reliability, culminating in a Looker Studio dashboard for PM and Marketing teams.",
+        "Drive data platform architecture optimization, system design, and operation of core infrastructure (Airbyte managed via Terraform, dbt, Dagster, BigQuery), achieving full automation and standardization of data processing flows.",
+        "Optimize complex SQL queries and BigQuery data structure (clustering/partitioning), successfully reducing BigQuery query costs and computational usage by 90%.",
+        "Led and mentored junior engineers on fundamental data engineering concepts, system design, and technical culture, significantly enhancing the team's overall technical proficiency and delivery capabilities."
       ]
     },
     {
@@ -89,101 +90,243 @@
   ],
   "techStack": [
     {
-        "category": "Programming Languages",
-        "skills": ["Python", "SQL", "Java", "C++/C"]
+      "category": "Programming Languages",
+      "skills": [
+        "Python",
+        "SQL",
+        "Java",
+        "C++/C"
+      ]
     },
     {
-        "category": "Databases / Data Warehouse",
-        "skills": ["PostgreSQL", "MongoDB", "BigQuery", "AWS Athena", "AWS S3", "DuckDB", "MySQL", "SQL Server"]
+      "category": "Databases / Data Warehouse",
+      "skills": [
+        "PostgreSQL",
+        "MongoDB",
+        "BigQuery",
+        "AWS Athena",
+        "AWS S3",
+        "DuckDB",
+        "MySQL",
+        "SQL Server"
+      ]
     },
     {
-        "category": "Data Engineering",
-        "skills": ["Airflow", "Dagster", "Airbyte", "dbt (Data Build Tool)", "AWS Athena", "Apache Kafka"]
+      "category": "Data Engineering",
+      "skills": [
+        "Airflow",
+        "Dagster",
+        "Airbyte",
+        "dbt (Data Build Tool)",
+        "AWS Athena",
+        "Apache Kafka"
+      ]
     },
     {
-        "category": "Data Visualization & BI",
-        "skills": ["GA4", "Looker Studio", "Superset", "Tableau"]
+      "category": "Data Visualization & BI",
+      "skills": [
+        "GA4",
+        "Looker Studio",
+        "Superset",
+        "Tableau"
+      ]
     },
     {
-        "category": "Backend",
-        "skills": ["Flask", "Pydantic", "FastAPI", "Dramatiq"]
+      "category": "Backend",
+      "skills": [
+        "Flask",
+        "Pydantic",
+        "FastAPI",
+        "Dramatiq",
+        "Grafana"
+      ]
     },
     {
-        "category": "Infrastructure",
-        "skills": ["Terraform", "Docker", "Git", "GitOps/ArgoCD"]
+      "category": "Infrastructure",
+      "skills": [
+        "Terraform",
+        "Docker",
+        "Git",
+        "GitOps/ArgoCD"
+      ]
     },
     {
-        "category": "AWS Services",
-        "skills": ["Bedrock", "Personalize", "Rekognition", "Neptune", "EC2", "Lambda", "Kinesis"]
+      "category": "AWS Services",
+      "skills": [
+        "Bedrock",
+        "Personalize",
+        "Rekognition",
+        "Neptune",
+        "EC2",
+        "Lambda",
+        "Kinesis"
+      ]
     },
     {
-        "category": "GenAI / RAG / MLOps",
-        "skills": ["AWS Bedrock", "AWS Bedrock Knowledge Bases", "PydanticAI", "LlamaIndex", "MLflow", "Databricks"]
+      "category": "GenAI / RAG / MLOps",
+      "skills": [
+        "AWS Bedrock",
+        "AWS Bedrock Knowledge Bases",
+        "PydanticAI",
+        "LlamaIndex",
+        "MLflow",
+        "Databricks"
+      ]
     },
     {
-        "category": "Machine Learning",
-        "skills": ["GNN", "Recommendation system", "Financial Time-Series", "PyTorch", "Keras", "AWS SageMaker", "AWS Personalize", "Huggingface", "LDA", "LLM", "NLP"]
+      "category": "Machine Learning",
+      "skills": [
+        "GNN",
+        "Recommendation system",
+        "Financial Time-Series",
+        "PyTorch",
+        "Keras",
+        "AWS SageMaker",
+        "AWS Personalize",
+        "Huggingface",
+        "LDA",
+        "LLM",
+        "NLP"
+      ]
     },
     {
-        "category": "Package dependencies management",
-        "skills": ["uv", "poetry"]
+      "category": "Package dependencies management",
+      "skills": [
+        "uv",
+        "poetry"
+      ]
     }
   ],
   "projects": [
     {
-        "id": 1,
-        "title": "Production AI Agent System Optimization",
-        "description": "Implemented dual-layer memory system (conversation & customer summaries) for production AI agent to reduce hallucinations and maintain conversation context. Conducted systematic evaluation on knowledge base retrieval, experimenting with chunking strategies and QA augmentation. Deployed multi-scale chunking solution that improved production metrics: context relevance from 0.35 to 0.7, context coverage from 0.7 to 0.97.",
-        "tech": ["Python", "LLM", "AWS Bedrock", "AWS Bedrock Knowledge Bases", "PostgreSQL"],
-        "link": ""
+      "id": 1,
+      "title": "One Art Taipei - AI Agent for Exhibition Visitors",
+      "description": "Spearheaded a 72-hour 'War Room' at an early-stage start-up to launch the One Art Taipei AI Agent. Collaborated with founding engineers and cross-functional teams to resolve critical LLM hallucinations and improve core intelligence under production pressure. Deployed production hotfixes for unicode-related hallucination issues in LLM outputs. Designed advanced RAG architecture with multi-scale chunking strategies (semantic + hierarchical) to stabilize retrieval for complex artist metadata. Built a custom analytics dashboard to monitor system performance and Daily Active Users (DAU). Re-engineered vector search parameters in AWS Bedrock to ensure high-fidelity responses for exhibition visitors. Authored comprehensive documentation on the RAG optimization process and data-centric debugging approach.",
+      "tech": [
+        "Python",
+        "LLM",
+        "Grafana",
+        "AWS Bedrock",
+        "AWS Bedrock Knowledge Bases",
+        "PostgreSQL",
+        "Looker Studio"
+      ],
+      "link": "https://www.onearttaipei.com/",
+      "image": "/images/oat_landing_page.PNG"
     },
     {
-        "id": 2,
-        "title": "AI-labeling system for social media platform",
-        "description": "Independently designed and developed an end-to-end system for a social media platform, integrating LLM (AWS Bedrock, PydanticAI), Flask, Kafka, and Dagster to create a complete data processing pipeline.",
-        "tech": ["Python", "MongoDB", "AWS S3", "LLM", "AWS Bedrock", "PydanticAI", "Flask", "Apache Kafka", "Dagster"],
-        "link": ""
+      "id": 2,
+      "title": "Production AI Agent System Optimization",
+      "description": "Implemented dual-layer memory system (conversation & customer summaries) for production AI agent to reduce hallucinations and maintain conversation context. Conducted systematic evaluation on knowledge base retrieval, experimenting with chunking strategies and QA augmentation. Deployed multi-scale chunking solution that improved production metrics: context relevance from 0.35 to 0.7, context coverage from 0.7 to 0.97.",
+      "tech": [
+        "Python",
+        "LLM",
+        "AWS Bedrock",
+        "AWS Bedrock Knowledge Bases",
+        "PostgreSQL"
+      ],
+      "link": ""
     },
     {
-        "id": 3,
-        "title": "End-to-end data pipeline for Avatar parts",
-        "description": "Engineered an end-to-end Avatar parts data pipeline supporting the critical Japan app launch in 2 sprints. This involved coordinating 7 cross-functional teams and tackling the complex challenge of parsing XRS binary files from S3/MongoDB into structured data. All BigQuery transformation logic was governed by dbt for testing and reliability, culminating in a Looker Studio dashboard for PM and Marketing teams.",
-        "tech": ["Python", "SQL", "Dagster", "MongoDB", "AWS S3", "BigQuery", "dbt (Data Build Tool)", "Looker Studio"]  
+      "id": 3,
+      "title": "AI-labeling system for social media platform",
+      "description": "Independently designed and developed an end-to-end system for a social media platform, integrating LLM (AWS Bedrock, PydanticAI), Flask, Kafka, and Dagster to create a complete data processing pipeline.",
+      "tech": [
+        "Python",
+        "MongoDB",
+        "AWS S3",
+        "LLM",
+        "AWS Bedrock",
+        "PydanticAI",
+        "Flask",
+        "Apache Kafka",
+        "Dagster"
+      ],
+      "link": ""
     },
     {
-        "id": 4,
-        "title": "Scalable Structured Data RAG Workflow for User-Uploaded Assets",
-        "description": "Engineered a scalable data ingestion workflow (embedding, chunking, and indexing) using dramatiq for asynchronous processing of user-uploaded CSV files. This process leverages AWS Bedrock Knowledge Bases to enable complex, high-accuracy Q&A capabilities over structured data, enhancing product functionality.",
-        "tech": ["Python", "AWS Bedrock Knowledge Bases", "AWS S3", "LLM", "PostgreSQL", "Dramatiq"],
-        "link": ""
+      "id": 4,
+      "title": "End-to-end data pipeline for Avatar parts",
+      "description": "Engineered an end-to-end Avatar parts data pipeline supporting the critical Japan app launch in 2 sprints. This involved coordinating 7 cross-functional teams and tackling the complex challenge of parsing XRS binary files from S3/MongoDB into structured data. All BigQuery transformation logic was governed by dbt for testing and reliability, culminating in a Looker Studio dashboard for PM and Marketing teams.",
+      "tech": [
+        "Python",
+        "SQL",
+        "Dagster",
+        "MongoDB",
+        "AWS S3",
+        "BigQuery",
+        "dbt (Data Build Tool)",
+        "Looker Studio"
+      ]
     },
     {
-        "id": 5,
-        "title": "Multi-modal RAG system PoC",
-        "description": "Researched and applied the latest multi-modal RAG papers, using Llamaindex with Huggingface or large-scale API implementation systems, and developed a baseline multi-modal RAG system based on the Gemini 2.5 series of large models.",
-        "tech": ["Python", "LlamaIndex", "MLflow", "Huggingface", "LLM"],
-        "link": ""
+      "id": 5,
+      "title": "Scalable Structured Data RAG Workflow for User-Uploaded Assets",
+      "description": "Engineered a scalable data ingestion workflow (embedding, chunking, and indexing) using dramatiq for asynchronous processing of user-uploaded CSV files. This process leverages AWS Bedrock Knowledge Bases to enable complex, high-accuracy Q&A capabilities over structured data, enhancing product functionality.",
+      "tech": [
+        "Python",
+        "AWS Bedrock Knowledge Bases",
+        "AWS S3",
+        "LLM",
+        "PostgreSQL",
+        "Dramatiq"
+      ],
+      "link": ""
     },
     {
-        "id": 6,
-        "title": "Adavanced Structured data RAG system PoC",
-        "description": "Using DuckDB with Gemini-2.5-flash-lite, designed a system architecture with highly competitive retrieval time and cost, which can be used immediately after users upload files.",
-        "tech": ["Python", "SQL", "PydanticAI", "DuckDB", "LLM", "MLflow"],
-        "link": ""
+      "id": 6,
+      "title": "Multi-modal RAG system PoC",
+      "description": "Researched and applied the latest multi-modal RAG papers, using Llamaindex with Huggingface or large-scale API implementation systems, and developed a baseline multi-modal RAG system based on the Gemini 2.5 series of large models.",
+      "tech": [
+        "Python",
+        "LlamaIndex",
+        "MLflow",
+        "Huggingface",
+        "LLM"
+      ],
+      "link": ""
     },
     {
-        "id": 7,
-        "title": "Text mining for customer feedback data",
-        "description": "A NLP model (LDA) was built to model topics, trying to find potential topics or keywords from the original user feedback data, and the prediction results were presented on a dashboard in Tableau.",
-        "tech": ["Python", "Airflow", "NLP", "LDA", "Tableau"],
-        "link": ""
+      "id": 7,
+      "title": "Adavanced Structured data RAG system PoC",
+      "description": "Using DuckDB with Gemini-2.5-flash-lite, designed a system architecture with highly competitive retrieval time and cost, which can be used immediately after users upload files.",
+      "tech": [
+        "Python",
+        "SQL",
+        "PydanticAI",
+        "DuckDB",
+        "LLM",
+        "MLflow"
+      ],
+      "link": ""
     },
     {
-        "id": 8,
-        "title": "Personalized recommendation system",
-        "description": "Developed the 'For You' feature of the company's product 'Promeo' from scratch, training a deep learning-based recommendation system through product interaction data to provide personalized recommendations for subscribers.",
-        "tech": ["Python", "AWS Personalize", "AWS S3", "Airflow", "AWS DynamoDB", "MLflow", "Superset"],
-        "link": ""
+      "id": 8,
+      "title": "Text mining for customer feedback data",
+      "description": "A NLP model (LDA) was built to model topics, trying to find potential topics or keywords from the original user feedback data, and the prediction results were presented on a dashboard in Tableau.",
+      "tech": [
+        "Python",
+        "Airflow",
+        "NLP",
+        "LDA",
+        "Tableau"
+      ],
+      "link": ""
+    },
+    {
+      "id": 9,
+      "title": "Personalized recommendation system",
+      "description": "Developed the 'For You' feature of the company's product 'Promeo' from scratch, training a deep learning-based recommendation system through product interaction data to provide personalized recommendations for subscribers.",
+      "tech": [
+        "Python",
+        "AWS Personalize",
+        "AWS S3",
+        "Airflow",
+        "AWS DynamoDB",
+        "MLflow",
+        "Superset"
+      ],
+      "link": ""
     }
   ]
 }
